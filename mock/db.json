@@ -1,0 +1,196 @@
+{
+  "initialData": {
+    "scorers": [
+      {
+        "player": {
+          "id": 10203,
+          "name": "Krzysztof Piątek",
+          "firstName": "Krzysztof",
+          "lastName": null,
+          "dateOfBirth": "1995-07-01",
+          "countryOfBirth": "Poland",
+          "nationality": "Poland",
+          "position": "Attacker",
+          "shirtNumber": 9,
+          "lastUpdated": "2018-11-25T05:13:44Z"
+        },
+        "team": {
+          "id": 107,
+          "name": "Genoa CFC"
+        },
+        "numberOfGoals": 10
+      },
+      {
+        "player": {
+          "id": 44,
+          "name": "Cristiano Ronaldo",
+          "firstName": "Cristiano Ronaldo",
+          "lastName": null,
+          "dateOfBirth": "1985-02-05",
+          "countryOfBirth": "Portugal",
+          "nationality": "Portugal",
+          "position": "Attacker",
+          "shirtNumber": 7,
+          "lastUpdated": "2018-11-16T05:12:21Z"
+        },
+        "team": {
+          "id": 109,
+          "name": "Juventus FC"
+        },
+        "numberOfGoals": 9
+      },
+      {
+        "player": {
+          "id": 2076,
+          "name": "Ciro Immobile",
+          "firstName": "Ciro",
+          "lastName": null,
+          "dateOfBirth": "1990-02-20",
+          "countryOfBirth": "Italy",
+          "nationality": "Italy",
+          "position": "Attacker",
+          "shirtNumber": 17,
+          "lastUpdated": "2018-09-19T05:12:09Z"
+        },
+        "team": {
+          "id": 110,
+          "name": "SS Lazio"
+        },
+        "numberOfGoals": 8
+      },
+      {
+        "player": {
+          "id": 2092,
+          "name": "Lorenzo Insigne",
+          "firstName": "Lorenzo",
+          "lastName": null,
+          "dateOfBirth": "1991-06-04",
+          "countryOfBirth": "Italy",
+          "nationality": "Italy",
+          "position": "Midfielder",
+          "shirtNumber": 24,
+          "lastUpdated": "2018-09-19T05:07:23Z"
+        },
+        "team": {
+          "id": 113,
+          "name": "SSC Napoli"
+        },
+        "numberOfGoals": 7
+      },
+      {
+        "player": {
+          "id": 2506,
+          "name": "Francesco Caputo",
+          "firstName": "Francesco",
+          "lastName": null,
+          "dateOfBirth": "1987-08-06",
+          "countryOfBirth": "Italy",
+          "nationality": "Italy",
+          "position": "Attacker",
+          "shirtNumber": 11,
+          "lastUpdated": "2018-09-19T05:12:11Z"
+        },
+        "team": {
+          "id": 445,
+          "name": "Empoli FC"
+        },
+        "numberOfGoals": 7
+      },
+      {
+        "player": {
+          "id": 2103,
+          "name": "Dries Mertens",
+          "firstName": "Dries",
+          "lastName": null,
+          "dateOfBirth": "1987-05-06",
+          "countryOfBirth": "Belgium",
+          "nationality": "Belgium",
+          "position": "Attacker",
+          "shirtNumber": 14,
+          "lastUpdated": "2018-11-25T05:13:46Z"
+        },
+        "team": {
+          "id": 113,
+          "name": "SSC Napoli"
+        },
+        "numberOfGoals": 7
+      },
+      {
+        "player": {
+          "id": 2014,
+          "name": "Mauro Icardi",
+          "firstName": "Mauro Emanuel",
+          "lastName": null,
+          "dateOfBirth": "1993-02-19",
+          "countryOfBirth": "Argentina",
+          "nationality": "Argentina",
+          "position": "Attacker",
+          "shirtNumber": 9,
+          "lastUpdated": "2018-11-25T05:50:40Z"
+        },
+        "team": {
+          "id": 108,
+          "name": "FC Internazionale Milano"
+        },
+        "numberOfGoals": 7
+      },
+      {
+        "player": {
+          "id": 2127,
+          "name": "Rodrigo de Paul",
+          "firstName": "Rodrigo Javier",
+          "lastName": null,
+          "dateOfBirth": "1994-05-24",
+          "countryOfBirth": "Argentina",
+          "nationality": "Argentina",
+          "position": "Midfielder",
+          "shirtNumber": 10,
+          "lastUpdated": "2018-11-25T05:50:43Z"
+        },
+        "team": {
+          "id": 115,
+          "name": "Udinese Calcio"
+        },
+        "numberOfGoals": 6
+      },
+      {
+        "player": {
+          "id": 2045,
+          "name": "Mario Mandžukić",
+          "firstName": "Mario",
+          "lastName": null,
+          "dateOfBirth": "1986-05-21",
+          "countryOfBirth": "Croatia",
+          "nationality": "Croatia",
+          "position": "Attacker",
+          "shirtNumber": 17,
+          "lastUpdated": "2018-09-19T05:07:23Z"
+        },
+        "team": {
+          "id": 109,
+          "name": "Juventus FC"
+        },
+        "numberOfGoals": 6
+      },
+      {
+        "player": {
+          "id": 1925,
+          "name": "Leonardo Pavoletti",
+          "firstName": "Leonardo",
+          "lastName": null,
+          "dateOfBirth": "1988-11-26",
+          "countryOfBirth": "Italy",
+          "nationality": "Italy",
+          "position": "Attacker",
+          "shirtNumber": 30,
+          "lastUpdated": "2018-09-19T05:12:07Z"
+        },
+        "team": {
+          "id": 104,
+          "name": "Cagliari Calcio"
+        },
+        "numberOfGoals": 6
+      }
+    ]
+  }
+}
