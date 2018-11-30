@@ -59,8 +59,8 @@ class SplashScreen extends React.Component {
     this.startTextAnim(this.state.opacityNt, 1500)
     this.startFadeIn(this.state.opacityTopScorers, 2000)
     this.startFadeIn(this.state.opacityAbout, 2500)
-    setInterval(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 3000)
-    setInterval(() => { this.startPulsingAnim(this.state.opacityAbout) }, 3750)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 4000)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityAbout) }, 4750)
   }
 
 
