@@ -8,22 +8,6 @@ import { ConnectedPlayerRow } from './PlayerRow'
 
 
 class DisplayScreen extends React.Component {
-  /*
-  constructor(props) {
-    super(props)
-    this.backButton = this.backButton.bind(this)
-  }
-
-  backButton() {
-    this.props.dispatch(appActions.home())
-  }
-  */
-
-  componentDidMount() {
-    //console.log("DisplayScreen with initial data: " + JSON.stringify(this.props.initialData))
-    //console.log("DisplayScreen with selectedPlayerRow: " + this.props.selectedPlayerRow)
-  }
-
   render() {
 
     const scorers = this.props.initialData.scorers
