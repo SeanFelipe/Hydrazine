@@ -19,21 +19,18 @@ class AboutScreen extends React.Component {
 
     this.textAnimDuration = 20000
     this.fadeDuration = 2000
-    this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
+    //this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
+    this.fadeOutBeginTime = 6000
     this.timeBetweenScrollers = 3000
 
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
     this.pad = 300
-    //this.starty = this.sh - this.pad
-    //this.endy = this.pad
     this.starty = - ( this.sh - this.pad )
     this.endy = 300
 
 
     this.state = {
-      //ypos: new Animated.Value(this.starty),
-      //textOpacity: new Animated.Value(0),
       opacities: {},
       ypositions: {},
     }
@@ -79,46 +76,40 @@ class AboutScreen extends React.Component {
     let timingOffset = 0
 
     Object.keys(this.strings).map((tag) => {
-
       const beginTime = timingOffset
       const endTime = beginTime + this.fadeOutBeginTime
 
       setTimeout(() => { this.startScrollingAnim(tag) }, beginTime)
-      //setTimeout(() => { this.fadeIn(tag) }, beginTime)
-      //setTimeout(() => { this.fadeOut(tag) }, endTime)
+      setTimeout(() => { this.fadeIn(tag) }, beginTime)
+      setTimeout(() => { this.fadeOut(tag) }, endTime)
 
       timingOffset += this.timeBetweenScrollers
     })
   }
 
-
   startScrollingAnim(val) {
-    console.log("startScrollingAnim() for val: " + JSON.stringify(val))
-    console.log("props: " + JSON.stringify(this.state.ypositions[val]))
-
-    return (
-      Animated.timing(
-        this.state.ypositions[val], {
-          toValue: this.endy,
-          duration: this.textAnimDuration,
-          easing: Easing.linear,
-        }
-      )
+    Animated.timing(
+      this.state.ypositions[val], {
+        toValue: this.endy,
+        duration: this.textAnimDuration,
+        easing: Easing.linear,
+      }
     ).start()
   }
 
   fadeIn(val) {
     Animated.timing(
-      val, {
+      this.state.opacities[val], {
         toValue: 1,
         duration: this.fadeDuration,
       }
     ).start()
   }
 
-  fadeOut(val, duration) {
+  fadeOut(val) {
+    console.log("fadeOut()")
     Animated.timing(
-      val, {
+      this.state.opacities[val], {
         toValue: 0,
         duration: this.fadeDuration,
       }
@@ -138,11 +129,8 @@ class AboutScreen extends React.Component {
       <View style={mainViewStyle}>
         {
           Object.keys(this.strings).map((tag, index) => {
-            console.log("about: " + tag)
-            //let opacity = this.state.opacities[tag]
             let ypos = this.state.ypositions[tag]
-            let opacity = 1
-            //let top = 400
+            let opacity = this.state.opacities[tag]
             const comment = this.strings[tag]
 
             return (
