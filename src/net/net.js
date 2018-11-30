@@ -23,7 +23,7 @@ export function initialDataCall() {
   return fetch(TARGET, opts)
     .then((response) => response.json())
     .then((json) => {
-      console.log("initialDataCall() retrieved data: " + JSON.stringify(json))
+      //console.log("initialDataCall() retrieved data: " + JSON.stringify(json))
       return json
     })
     .catch((error) => {

@@ -18,16 +18,15 @@ class Alpha extends React.Component {
   }
 
   componentDidMount() {
-    //this.props.dispatch(appActions.handleInitialLoad())
+    this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.setInitialScreen('Splash'))
-    this.props.dispatch(appActions.setInitialScreen('About'))
+    //this.props.dispatch(appActions.setInitialScreen('About'))
   }
 
   nav(tag) {
     // switch doens't seem to work in JSX so here's a helper function
     switch (tag) {
       case 'Loading':
-        //return <Text style={{justifyContent: "center"}}>Loading futbol data...</Text>
         return <ConnectedSplashScreen />
       case 'Splash':
         return <ConnectedSplashScreen />

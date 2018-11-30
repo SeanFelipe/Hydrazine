@@ -38,10 +38,10 @@ class AboutScreen extends React.Component {
     this.strings = {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
       api         : 'API data from football-data.org.',
-      redux       : 'Screen management with Redux.',
-      platform    : 'Cross-platform web/android/ios with react-universal-ui.',
+      redux       : 'State management for screens + data by Redux.',
+      platform    : 'ruui.cool for web + mobile builds from the same codebase',
       animations  : 'Animations with React Native Animated toolkit.',
-      zero        : 'Inspiration from Zero Wing.',
+      zero        : 'Inspiration from Zero Wing...',
       justice     : '...for great justice.',
     }
 
@@ -121,8 +121,8 @@ class AboutScreen extends React.Component {
     const mainViewStyle = {
       width: this.sw,
       height: this.sh,
-      borderColor: '#accaf9',
-      borderWidth: 2,
+      //borderColor: '#accaf9',
+      //borderWidth: 2,
     }
 
     return (
