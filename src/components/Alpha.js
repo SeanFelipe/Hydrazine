@@ -5,6 +5,7 @@ import * as appActions from '../store/actions/actions';
 
 import { ConnectedDisplayScreen } from './DisplayScreen'
 import { ConnectedSplashScreen } from './SplashScreen'
+import { ConnectedAboutScreen } from './AboutScreen'
 import { Sandbox } from './Sandbox'
 
 import { Styles } from './styles'
@@ -17,9 +18,9 @@ class Alpha extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(appActions.handleInitialLoad())
+    //this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.setInitialScreen('Splash'))
-    //this.props.dispatch(appActions.setInitialScreen('Sandbox'))
+    this.props.dispatch(appActions.setInitialScreen('About'))
   }
 
   nav(tag) {
@@ -36,6 +37,8 @@ class Alpha extends React.Component {
         return <ConnectedTeamScreen />
       case 'Sandbox':
         return <Sandbox />
+      case 'About':
+        return <ConnectedAboutScreen />
       default:
         return <Text>No screen selected.</Text>
     }

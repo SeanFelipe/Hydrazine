@@ -298,3 +298,12 @@ export const Expr = {
     backgroundColor: '#ff0000',
   },
 }
+
+export const About = {
+  main: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    borderColor: '#accaf9',
+    borderWidth: 2,
+  },
+}

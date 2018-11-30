@@ -78,8 +78,7 @@ class SplashScreen extends React.Component {
   }
 
   triggerAboutScreen() {
-    //this.props.dispatch(changeScreen('About'))
-    this.props.dispatch(changeScreen('Display'))
+    this.props.dispatch(changeScreen('About'))
   }
 
   futbolAnim() {
