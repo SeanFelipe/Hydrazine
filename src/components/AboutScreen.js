@@ -31,7 +31,7 @@ class AboutScreen extends React.Component {
       textOpacity: new Animated.Value(0),
     }
 
-    this.textAttempt = 'An attempt to show some ReactJS skills.'
+    this.textAttempt = 'An attempt to demonstrate some ReactJS skills.'
     this.textApi = 'API data from football-data.org.'
     this.textRedux= 'Screen management with Redux.'
     this.textPlatform = 'Cross-platform web/android/ios with react-universal-ui.'
@@ -73,6 +73,15 @@ class AboutScreen extends React.Component {
     Animated.timing(
       val, {
         toValue: 1,
+        duration: duration,
+      }
+    ).start()
+  }
+
+  endFadeAnim(val, duration) {
+    Animated.timing(
+      val, {
+        toValue: 0,
         duration: duration,
       }
     ).start()
