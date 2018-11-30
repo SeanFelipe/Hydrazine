@@ -6,7 +6,8 @@ import { hot } from 'react-hot-loader';
 
 import { store } from './store';
 import { increaseCounter } from './store/actions/actions';
-import { ConnectedAlpha } from './components/Alpha.js';
+//import { ConnectedAlpha } from './components/Alpha.js';
+import { ConnectedAlpha } from './Alpha.js';
 
 import { IndexStyles } from './components/styles'
 

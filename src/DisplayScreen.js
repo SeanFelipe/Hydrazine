@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, View, ScrollView, Text, TextInput } from 'react-native'
 
-import * as appActions from '../store/actions/actions';
+import * as appActions from './store/actions/actions';
 import { Alpha, Styles, StudentInfoStyles } from './styles'
 import { ConnectedPlayerRow } from './PlayerRow'
 

@@ -10,7 +10,7 @@ import {
   Easing,
 } from 'react-native'
 
-import { changeScreen } from '../store/actions/actions'
+import { changeScreen } from './store/actions/actions'
 import { Expr } from './styles'
 
 
@@ -68,7 +68,7 @@ class SplashScreen extends React.Component {
     return (
       <Image
         style={{width: 50, height: 50}}
-        source={require('../../assets/img/soccerball.svg.png')}
+        source={require('../assets/img/soccerball.svg.png')}
       />
     )
   }
