@@ -9,7 +9,7 @@ import { increaseCounter } from './store/actions/actions';
 //import { ConnectedAlpha } from './components/Alpha.js';
 import { ConnectedAlpha } from './Alpha.js';
 
-import { IndexStyles } from './components/styles'
+import { IndexStyles } from './styles'
 
 const instructions = Platform.select({
 	ios: 'Press Cmd+R to reload,\n' +

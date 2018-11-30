@@ -20,6 +20,7 @@ class AboutScreen extends React.Component {
     this.textAnimDuration = 7000
     this.fadeDuration = 2000
     this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
+    this.timeBetweenScrollers = 2000
 
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
@@ -29,43 +30,77 @@ class AboutScreen extends React.Component {
 
 
     this.state = {
-      ypos: new Animated.Value(this.starty),
-      textOpacity: new Animated.Value(0),
+      //ypos: new Animated.Value(this.starty),
+      //textOpacity: new Animated.Value(0),
+      opacities: {},
+      ypositions: {},
     }
 
-    this.textAttempt = 'An attempt to demonstrate some ReactJS skills.'
-    this.textApi = 'API data from football-data.org.'
-    this.textRedux= 'Screen management with Redux.'
-    this.textPlatform = 'Cross-platform web/android/ios with react-universal-ui.'
-    this.textAnimations = 'Animations with React Native Animated toolkit.'
-    this.textZero = 'Inspiration from Zero Wing.'
-    this.textJustice = '... for great justice.'
+    this.strings = {
+      attempt     : 'An attempt to demonstrate some ReactJS skills.',
+      api         : 'API data from football-data.org.',
+      redux       : 'Screen management with Redux.',
+      platform    : 'Cross-platform web/android/ios with react-universal-ui.',
+      animations  : 'Animations with React Native Animated toolkit.',
+      zero        : 'Inspiration from Zero Wing.',
+      justice     : '...for great justice.',
+    }
 
-    this.allTexts = [
-      this.textAttempt,
-      this.textApi,
-      this.textRedux,
-      this.textPlatform,
-      this.textZero,
-      this.textJustice
-    ]
-
-    this.startTextAnim = this.startTextAnim.bind(this)
+    this.startScrollingAnim = this.startScrollingAnim.bind(this)
     this.fadeIn = this.fadeIn.bind(this)
     this.fadeOut = this.fadeOut.bind(this)
-
+    this.initializeAnims = this.initializeAnims.bind(this)
+    this.beginAnimationChain = this.beginAnimationChain.bind(this)
   }
 
   componentDidMount() {
-    this.startTextAnim(this.state.ypos)
-    this.fadeIn(this.state.textOpacity)
-    setTimeout(() => {this.fadeOut(this.state.textOpacity)}, this.fadeOutBeginTime)
+    this.initializeAnims()
+    console.log("opacities: " + JSON.stringify(this.state.opacities))
+    console.log("ypositions: " + JSON.stringify(this.state.ypositions))
+    this.beginAnimationChain()
   }
 
-  startTextAnim(val, duration) {
+  initializeAnims() {
+    ops = {foo: 'bar'}
+    ypos = {baz: 'ish'}
+
+    Object.keys(this.strings).map((tag) => {
+      ops[tag] = new Animated.Value(0)
+      ypos[tag] = new Animated.Value(0)
+    })
+
+    console.log("initializeAnims: " + JSON.stringify(ops))
+    console.log("initializeAnims: " + JSON.stringify(ypos))
+    this.setState({
+      opacities: ops,
+      ypositions: ypos
+    })
+  }
+
+  beginAnimationChain() {
+    let timingOffset = 0
+
+    Object.keys(this.strings).map((tag) => {
+
+      const beginTime = timingOffset
+      const endTime = beginTime + this.fadeOutBeginTime
+
+      setTimeout(() => { this.startScrollingAnim(tag) }, beginTime)
+      //setTimeout(() => { this.fadeIn(tag) }, beginTime)
+      //setTimeout(() => { this.fadeOut(tag) }, endTime)
+
+      timingOffset += this.timeBetweenScrollers
+    })
+  }
+
+
+  startScrollingAnim(val) {
+    console.log("startScrollingAnim() for val: " + JSON.stringify(val))
+    console.log("props: " + JSON.stringify(this.state.ypositions[val]))
+
     return (
       Animated.timing(
-        val, {
+        this.state.ypositions[val], {
           toValue: this.endy,
           duration: this.textAnimDuration,
           easing: Easing.linear,
@@ -103,123 +138,27 @@ class AboutScreen extends React.Component {
 
     return (
       <View style={mainViewStyle}>
-        <Animated.View style={{
-          opacity: this.state.textOpacity,
-          top: this.state.ypos,
-        }} >
-          <Text style={About.scrollText}>{this.textAttempt}</Text>
-        </Animated.View>
-      </View>
-    )
-  }
-}
+        {
+          Object.keys(this.strings).map((tag, index) => {
+            console.log("about: " + tag)
+            //let opacity = this.state.opacities[tag]
+            let top = this.state.ypositions[tag]
+            let opacity = 1
+            //let top = 400
+            const comment = this.strings[tag]
 
-  /*
-
-export class Sandbox extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.animDuration = 1500
-    this.textDuration = 1000
-
-    const xfactor = 0.8
-    const yfactor = 0.5
-    this.scx = Dimensions.get('window').width
-    this.scy = Dimensions.get('window').height
-    this.sx = this.scx * xfactor
-    this.sy = this.scy * yfactor
-
-    this.fontx = 30
-    this.fonty = 20
-
-
-    console.log(`sx sy: ${this.sx} ${this.sy}`)
-
-    this.state = {
-      fy: new Animated.Value(0),
-      opacityData: new Animated.Value(0),
-      opacityClient: new Animated.Value(0),
-    }
-
-    this.futbolAnim = this.futbolAnim.bind(this)
-    this.makeTextAnim = this.makeTextAnim.bind(this)
-
-    this.dataTextAnim = this.makeTextAnim(this.state.opacityData, 500)
-    this.clientTextAnim = this.makeTextAnim(this.state.opacityClient, 500)
-  }
-
-   componentDidMount() {
-     this.futbolAnim()
-   }
-
-
-  futbolAnim() {
-    Animated.timing(
-      this.state.fy, {
-        toValue: this.sy,
-        duration: this.animDuration,
-        easing: Easing.bounce,
-      }
-    ).start()
-  }
-
-  makeTextAnim(val, delay) {
-    return (
-      Animated.timing(
-        val, {
-          toValue: 1,
-          delay
+            return (
+              <Animated.View key={index} style={{ opacity, top }} >
+                <Text style={About.scrollText}>{comment}</Text>
+              </Animated.View>
+            )
+          })
         }
-      )
-    )
-  }
-
-
-  render() {
-
-    let ballStyle = {
-      marginTop: this.state.fy
-    }
-
-    const dims = {
-      width: this.sx,
-      height: this.sy,
-    }
-
-    const introFontContainer = {
-      position: 'absolute',
-      flex: 1,
-      flexDirection: 'row',
-      top: this.fonty,
-      left: this.fontx
-    }
-
-    console.log("dims: " + JSON.stringify(dims))
-
-    let animStyle = Object.assign(Expr.animContainer, dims)
-
-    console.log("animStyle: " + JSON.stringify(animStyle))
-
-//<Text style={introTextFont}>Client</Text>
-    return (
-      <View>
-        <View style={Expr.animContainer}>
-          <Animated.View style={ballStyle}>
-            <SoccerBall />
-          </Animated.View>
-        </View>
-        <Animated.View style={introFontContainer}>
-          <Text style={Expr.introText}>Futbol</Text>
-          <Animated.View style={{opacity: this.state.opacityData}}>
-            <Text style={Expr.introText}>Data</Text>
-          </Animated.View>
-        </Animated.View>
       </View>
     )
   }
 }
-  */
+
 
 export const ConnectedAboutScreen = connect((store) => ({
   dispatch: store.dispatch,
