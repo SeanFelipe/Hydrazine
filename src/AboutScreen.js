@@ -17,16 +17,18 @@ class AboutScreen extends React.Component {
   constructor(props) {
     super(props)
 
-    this.textAnimDuration = 7000
+    this.textAnimDuration = 20000
     this.fadeDuration = 2000
     this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
-    this.timeBetweenScrollers = 2000
+    this.timeBetweenScrollers = 3000
 
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
-    this.endy = 100
-    this.starty = this.sh -200
-    //this.endy = this.sh -100
+    this.pad = 300
+    //this.starty = this.sh - this.pad
+    //this.endy = this.pad
+    this.starty = - ( this.sh - this.pad )
+    this.endy = 300
 
 
     this.state = {
@@ -55,22 +57,18 @@ class AboutScreen extends React.Component {
 
   componentDidMount() {
     this.initializeAnims()
-    console.log("opacities: " + JSON.stringify(this.state.opacities))
-    console.log("ypositions: " + JSON.stringify(this.state.ypositions))
     this.beginAnimationChain()
   }
 
   initializeAnims() {
-    ops = {foo: 'bar'}
-    ypos = {baz: 'ish'}
+    ops = {}
+    ypos = {}
 
-    Object.keys(this.strings).map((tag) => {
+    Object.keys(this.strings).map(tag => {
       ops[tag] = new Animated.Value(0)
-      ypos[tag] = new Animated.Value(0)
+      ypos[tag] = new Animated.Value(this.starty)
     })
 
-    console.log("initializeAnims: " + JSON.stringify(ops))
-    console.log("initializeAnims: " + JSON.stringify(ypos))
     this.setState({
       opacities: ops,
       ypositions: ypos
@@ -142,13 +140,17 @@ class AboutScreen extends React.Component {
           Object.keys(this.strings).map((tag, index) => {
             console.log("about: " + tag)
             //let opacity = this.state.opacities[tag]
-            let top = this.state.ypositions[tag]
+            let ypos = this.state.ypositions[tag]
             let opacity = 1
             //let top = 400
             const comment = this.strings[tag]
 
             return (
-              <Animated.View key={index} style={{ opacity, top }} >
+              <Animated.View key={index} style={
+                {
+                  bottom: ypos,
+                  opacity,
+                }} >
                 <Text style={About.scrollText}>{comment}</Text>
               </Animated.View>
             )
