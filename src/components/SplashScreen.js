@@ -14,16 +14,6 @@ import { changeScreen } from '../store/actions/actions'
 import { Expr } from './styles'
 
 
-const SoccerBall = () => {
-  return (
-    <Image
-      style={{width: 50, height: 50}}
-      source={require('../../assets/img/soccerball.svg.png')}
-    />
-  )
-}
-
-
 class SplashScreen extends React.Component {
   constructor(props) {
     super(props)
@@ -38,11 +28,6 @@ class SplashScreen extends React.Component {
     this.sx = this.scx * xfactor
     this.sy = this.scy * yfactor
 
-    this.fontx = 30
-    this.fonty = 20
-
-
-    //console.log(`sx sy: ${this.sx} ${this.sy}`)
 
     this.state = {
       fy: new Animated.Value(-200),
@@ -55,6 +40,7 @@ class SplashScreen extends React.Component {
       opacityAbout: new Animated.Value(0),
     }
 
+    this.soccerBall = this.soccerBall.bind(this)
     this.futbolAnim = this.futbolAnim.bind(this)
     this.startTextAnim = this.startTextAnim.bind(this)
     this.startFadeIn = this.startFadeIn.bind(this)
@@ -64,26 +50,36 @@ class SplashScreen extends React.Component {
     this.triggerAboutScreen = this.triggerAboutScreen.bind(this)
   }
 
-    componentDidMount() {
-      this.futbolAnim()
-      this.startTextAnim(this.state.opacityFutbol, 500)
-      this.startTextAnim(this.state.opacityData, 1000)
-      this.startTextAnim(this.state.opacityCl, 1300)
-      this.startTextAnim(this.state.opacityIe, 1400)
-      this.startTextAnim(this.state.opacityNt, 1500)
-      this.startFadeIn(this.state.opacityTopScorers, 2000)
-      this.startFadeIn(this.state.opacityAbout, 2500)
-      //setTimeout(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 3000)
-      //setTimeout(() => { this.startPulsingAnim(this.state.opacityAbout) }, 3500)
-   }
+  componentDidMount() {
+    this.futbolAnim()
+    this.startTextAnim(this.state.opacityFutbol, 500)
+    this.startTextAnim(this.state.opacityData, 1000)
+    this.startTextAnim(this.state.opacityCl, 1300)
+    this.startTextAnim(this.state.opacityIe, 1400)
+    this.startTextAnim(this.state.opacityNt, 1500)
+    this.startFadeIn(this.state.opacityTopScorers, 2000)
+    this.startFadeIn(this.state.opacityAbout, 2500)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 3000)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityAbout) }, 3750)
+  }
+
+
+  soccerBall () {
+    return (
+      <Image
+        style={{width: 50, height: 50}}
+        source={require('../../assets/img/soccerball.svg.png')}
+      />
+    )
+  }
 
   triggerDisplayScreen() {
     this.props.dispatch(changeScreen('Display'))
   }
 
   triggerAboutScreen() {
-    this.props.dispatch(changeScreen('Display'))
     //this.props.dispatch(changeScreen('About'))
+    this.props.dispatch(changeScreen('Display'))
   }
 
   futbolAnim() {
@@ -115,32 +111,33 @@ class SplashScreen extends React.Component {
   }
 
   startPulsingAnim(val) {
-    const fadeOut = Animated.timing(
-      val, {
+    Animated.sequence([
+      Animated.timing(val, {
         toValue: 0,
-      }
-    ).start()
+        duration: 1500,
+      }),
+      Animated.timing(val, {
+        toValue: 1,
+        duration: 800,
+      }),
+    ]).start()
   }
 
   render() {
-
     let ballStyle = {
       marginTop: this.state.fy
+    }
+
+    const introFontContainer = {
+      flex: 1,
+      flexDirection: 'row',
+      bottom: 120,
     }
 
     const dims = {
       width: this.sx,
       height: this.sy,
     }
-
-    const introFontContainer = {
-      position: 'absolute',
-      flex: 1,
-      flexDirection: 'row',
-      top: this.fonty,
-      left: this.fontx
-    }
-
     //console.log("dims: " + JSON.stringify(dims))
 
     // animContainer needs dynamically made dimensions
@@ -152,7 +149,7 @@ class SplashScreen extends React.Component {
         <View style={Expr.animContainer}>
           <View style={Expr.flex}>
             <Animated.View style={ballStyle}>
-              <SoccerBall />
+              { this.soccerBall() }
             </Animated.View>
           </View>
           <Animated.View style={introFontContainer}>
@@ -199,4 +196,3 @@ class SplashScreen extends React.Component {
 export const ConnectedSplashScreen = connect((store) => ({
   dispatch: store.dispatch,
 }))(SplashScreen)
-

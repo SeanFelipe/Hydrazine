@@ -3,7 +3,8 @@ const Promise = require('bluebird')
 
 const REMOTE = 'http://api.football-data.org'
 const LOCAL = 'http://localhost:3004'
-const futbolHost = LOCAL
+//const futbolHost = LOCAL
+const futbolHost = REMOTE
 const INITIAL_URL = `${futbolHost}/v2/competitions/`
 const CHAMPIONS_LEAGUE = `${futbolHost}/v2/competitions/CL/matches`
 const TOP_SCORERS = `${futbolHost}/v2/competitions/SA/scorers`
