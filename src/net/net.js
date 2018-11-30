@@ -23,7 +23,7 @@ export function initialDataCall() {
   return fetch(TARGET, opts)
     .then((response) => response.json())
     .then((json) => {
-      //console.log("initialDataCall() retrieved data: " + JSON.stringify(json))
+      console.log("initialDataCall() retrieved data: " + JSON.stringify(json))
       return json
     })
     .catch((error) => {
@@ -31,35 +31,3 @@ export function initialDataCall() {
       throw error
     })
 }
-
-
-  /*
-function dropoffUrl(studentId) {
-  return `${cubaHost}/student/updateDropoff/${studentId}/`
-}
-
-
-export function sendDropoffUpdate(studentId, droppedOffByName) {
-    console.log(`updating dropoff info for student: ${studentId} info: ${JSON.stringify(droppedOffByName)}`)
-
-    const url = dropoffUrl(studentId)
-    console.log("USDI url: " + url + " for name: " + droppedOffByName);
-
-    return new Promise((resolve) => {
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorzation': basicAuth(),
-        },
-        body: `droppedOffByName=${droppedOffByName}`
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          console.log("sendDropoffUpdate response: " + json);
-          console.log("sendDropoffUpdate keys: " + Object.keys(json));
-          resolve(json)
-      })
-    })
-}
-*/

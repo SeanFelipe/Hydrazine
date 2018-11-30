@@ -17,7 +17,9 @@ class AboutScreen extends React.Component {
   constructor(props) {
     super(props)
 
-    this.textAnimDuration = 3000
+    this.textAnimDuration = 7000
+    this.fadeDuration = 2000
+    this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
 
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
@@ -49,13 +51,15 @@ class AboutScreen extends React.Component {
     ]
 
     this.startTextAnim = this.startTextAnim.bind(this)
-    this.startFadeAnim = this.startFadeAnim.bind(this)
+    this.fadeIn = this.fadeIn.bind(this)
+    this.fadeOut = this.fadeOut.bind(this)
 
   }
 
   componentDidMount() {
     this.startTextAnim(this.state.ypos)
-    this.startFadeAnim(this.state.textOpacity, 1500)
+    this.fadeIn(this.state.textOpacity)
+    setTimeout(() => {this.fadeOut(this.state.textOpacity)}, this.fadeOutBeginTime)
   }
 
   startTextAnim(val, duration) {
@@ -64,25 +68,26 @@ class AboutScreen extends React.Component {
         val, {
           toValue: this.endy,
           duration: this.textAnimDuration,
+          easing: Easing.linear,
         }
       )
     ).start()
   }
 
-  startFadeAnim(val, duration) {
+  fadeIn(val) {
     Animated.timing(
       val, {
         toValue: 1,
-        duration: duration,
+        duration: this.fadeDuration,
       }
     ).start()
   }
 
-  endFadeAnim(val, duration) {
+  fadeOut(val, duration) {
     Animated.timing(
       val, {
         toValue: 0,
-        duration: duration,
+        duration: this.fadeDuration,
       }
     ).start()
   }
@@ -102,7 +107,7 @@ class AboutScreen extends React.Component {
           opacity: this.state.textOpacity,
           top: this.state.ypos,
         }} >
-          <Text>{this.textAttempt}</Text>
+          <Text style={About.scrollText}>{this.textAttempt}</Text>
         </Animated.View>
       </View>
     )

@@ -302,8 +302,14 @@ export const Expr = {
 export const About = {
   main: {
     alignSelf: 'stretch',
-    alignItems: 'center',
     borderColor: '#accaf9',
     borderWidth: 2,
   },
-}
+  scrollText: {
+    fontFamily: "Lato-Medium",
+    //color:'#ee9999',
+    color:'#cfccbb',
+    fontSize: 18,
+    marginLeft: 50,
+  },
+ }
