@@ -7,9 +7,9 @@ import { hot } from 'react-hot-loader';
 import { store } from './store';
 import { increaseCounter } from './store/actions/actions';
 //import { ConnectedAlpha } from './components/Alpha.js';
-import { ConnectedAlpha } from './Alpha.js';
+import { ConnectedAlpha } from './components/Alpha.js';
 
-import { IndexStyles } from './styles'
+import { IndexStyles } from './components/styles'
 
 const instructions = Platform.select({
 	ios: 'Press Cmd+R to reload,\n' +

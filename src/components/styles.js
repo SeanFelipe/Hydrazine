@@ -300,16 +300,24 @@ export const Expr = {
 }
 
 export const About = {
-  main: {
-    alignSelf: 'stretch',
-    borderColor: '#accaf9',
-    borderWidth: 2,
+  backButtonContainer: {
+    alignItems: 'center',
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: '#cfccbb',
+    marginLeft: '40%',
+    marginRight: '40%',
+  },
+   backButton: {
+    fontFamily: "Lato-Medium",
+    //color:'#ee9999',
+    color:'#cfccbb',
+    fontSize: 24,
   },
   scrollText: {
     fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#cfccbb',
     fontSize: 18,
-    marginLeft: 50,
   },
- }
+}

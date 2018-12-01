@@ -10,6 +10,7 @@ import {
   Easing,
 } from 'react-native'
 
+import { changeScreen } from '../store/actions/actions'
 import { About, Expr } from './styles'
 
 
@@ -23,10 +24,12 @@ class AboutScreen extends React.Component {
     this.fadeOutBeginTime = 6000
     this.timeBetweenScrollers = 3000
 
+    this.backButtonFadeInTime = 7000
+
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
     this.pad = 300
-    this.starty = - ( this.sh - this.pad )
+    this.starty = - ( this.sh - 400 )
     this.endy = 300
 
 
@@ -39,11 +42,13 @@ class AboutScreen extends React.Component {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
       api         : 'API data from football-data.org.',
       redux       : 'State management for screens + data by Redux.',
-      platform    : 'ruui.cool for web + mobile builds from the same codebase',
+      platform    : "React-Universal-UI\nfor web + mobile builds\nfrom the same codebase!",
       animations  : 'Animations with React Native Animated toolkit.',
       zero        : 'Inspiration from Zero Wing...',
       justice     : '...for great justice.',
     }
+
+    this.backButton = this.backButton.bind(this)
 
     this.startScrollingAnim = this.startScrollingAnim.bind(this)
     this.fadeIn = this.fadeIn.bind(this)
@@ -57,14 +62,23 @@ class AboutScreen extends React.Component {
     this.beginAnimationChain()
   }
 
+  backButton() {
+    this.props.dispatch(changeScreen('Splash'))
+  }
+
   initializeAnims() {
-    ops = {}
+    ops = {
+      backButton: new Animated.Value(0)
+    }
+
     ypos = {}
 
     Object.keys(this.strings).map(tag => {
       ops[tag] = new Animated.Value(0)
       ypos[tag] = new Animated.Value(this.starty)
     })
+
+    console.log("ops: " + JSON.stringify(ops))
 
     this.setState({
       opacities: ops,
@@ -85,6 +99,8 @@ class AboutScreen extends React.Component {
 
       timingOffset += this.timeBetweenScrollers
     })
+
+    setTimeout(() => { this.fadeIn('backButton') }, this.backButtonFadeInTime)
   }
 
   startScrollingAnim(val) {
@@ -98,6 +114,7 @@ class AboutScreen extends React.Component {
   }
 
   fadeIn(val) {
+    console.log("fadeIn(): " + val)
     Animated.timing(
       this.state.opacities[val], {
         toValue: 1,
@@ -107,7 +124,7 @@ class AboutScreen extends React.Component {
   }
 
   fadeOut(val) {
-    console.log("fadeOut()")
+    //console.log("fadeOut() for val: " + val)
     Animated.timing(
       this.state.opacities[val], {
         toValue: 0,
@@ -117,33 +134,49 @@ class AboutScreen extends React.Component {
   }
 
   render() {
-
     const mainViewStyle = {
+      flex: 1,
+      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      alignItems: 'center',
       width: this.sw,
-      height: this.sh,
+      height: this.sh * 0.7,
       //borderColor: '#accaf9',
       //borderWidth: 2,
     }
 
-    return (
-      <View style={mainViewStyle}>
-        {
-          Object.keys(this.strings).map((tag, index) => {
-            let ypos = this.state.ypositions[tag]
-            let opacity = this.state.opacities[tag]
-            const comment = this.strings[tag]
 
-            return (
-              <Animated.View key={index} style={
-                {
-                  bottom: ypos,
-                  opacity,
-                }} >
-                <Text style={About.scrollText}>{comment}</Text>
-              </Animated.View>
-            )
-          })
-        }
+    const backButtonContainerStyle = Object.assign(
+      About.backButtonContainer,
+      { opacity: this.state.opacities.backButton }
+    )
+
+    return (
+      <View>
+        <View style={mainViewStyle}>
+          {
+            Object.keys(this.strings).map((tag, index) => {
+              let ypos = this.state.ypositions[tag]
+              let opacity = this.state.opacities[tag]
+              const comment = this.strings[tag]
+
+              return (
+                <Animated.View key={index} style={
+                  {
+                    bottom: ypos,
+                    opacity,
+                  }} >
+                  <Text style={About.scrollText}>{comment}</Text>
+                </Animated.View>
+              )
+            })
+          }
+        </View>
+        <View >
+          <Animated.View style={ backButtonContainerStyle}>
+            <Text style={About.backButton} onPress={this.backButton}>Back</Text>
+          </Animated.View>
+        </View>
       </View>
     )
   }

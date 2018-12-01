@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { View, Text } from 'react-native'
-import * as appActions from './store/actions/actions';
+import * as appActions from './../store/actions/actions';
 
 import { ConnectedDisplayScreen } from './DisplayScreen'
 import { ConnectedSplashScreen } from './SplashScreen'
@@ -18,9 +18,9 @@ class Alpha extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(appActions.handleInitialLoad())
+    //this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.setInitialScreen('Splash'))
-    //this.props.dispatch(appActions.setInitialScreen('About'))
+    this.props.dispatch(appActions.setInitialScreen('About'))
   }
 
   nav(tag) {

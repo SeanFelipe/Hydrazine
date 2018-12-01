@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Animated, Button, View, ScrollView, Text, TextInput } from 'react-native'
 import { Alpha, Styles, StudentInfoStyles } from './styles'
 
-import { getSelectedPlayer, setSelectedPlayer } from './store/actions/actions';
+import { getSelectedPlayer, setSelectedPlayer } from './../store/actions/actions';
 
 
 export class PlayerRow extends React.Component {
