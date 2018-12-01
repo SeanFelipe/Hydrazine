@@ -13,6 +13,8 @@ import {
 import { changeScreen } from '../store/actions/actions'
 import { About, Expr } from './styles'
 
+import { ConnectedBackButton } from './BackButton'
+
 
 class AboutScreen extends React.Component {
   constructor(props) {
@@ -174,7 +176,7 @@ class AboutScreen extends React.Component {
         </View>
         <View >
           <Animated.View style={ backButtonContainerStyle}>
-            <Text style={About.backButton} onPress={this.backButton}>Back</Text>
+            <ConnectedBackButton />
           </Animated.View>
         </View>
       </View>

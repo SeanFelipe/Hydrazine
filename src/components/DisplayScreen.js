@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { Button, View, ScrollView, Text, TextInput } from 'react-native'
 
 import * as appActions from './../store/actions/actions';
-import { Alpha, Styles, StudentInfoStyles } from './styles'
+import { Styles, About } from './styles'
 import { ConnectedPlayerRow } from './PlayerRow'
+import { ConnectedBackButton } from './BackButton'
 
 
 class DisplayScreen extends React.Component {
@@ -22,6 +23,9 @@ class DisplayScreen extends React.Component {
                 })
               }
             </ScrollView>
+          </View>
+          <View>
+            <ConnectedBackButton />
           </View>
       </View>
     )
