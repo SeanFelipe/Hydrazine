@@ -148,11 +148,6 @@ class AboutScreen extends React.Component {
     }
 
 
-    const backButtonContainerStyle = Object.assign(
-      About.backButtonContainer,
-      { opacity: this.state.opacities.backButton }
-    )
-
     return (
       <View>
         <View style={mainViewStyle}>
@@ -174,8 +169,8 @@ class AboutScreen extends React.Component {
             })
           }
         </View>
-        <View >
-          <Animated.View style={ backButtonContainerStyle}>
+        <View>
+          <Animated.View style={{ opacity: this.state.opacities.backButton }}>
             <ConnectedBackButton />
           </Animated.View>
         </View>

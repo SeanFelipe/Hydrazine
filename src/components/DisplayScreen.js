@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, View, ScrollView, Text, TextInput } from 'react-native'
+import { Button, View, ScrollView, Text, TextInput, Dimensions } from 'react-native'
 
 import * as appActions from './../store/actions/actions';
 import { Styles, About } from './styles'
@@ -12,10 +12,12 @@ class DisplayScreen extends React.Component {
   render() {
 
     const scorers = this.props.initialData.scorers
+    //<View style={ Styles.topScorersContainer }>
 
     return (
-      <View style={ Styles.topScorersContainer }>
-        <Text style={Styles.topScorersText}>Top Scorers:</Text>
+      <View style={{ width: Dimensions.get('window').width }}>
+        <View style={Styles.topScorersContainer}>
+          <Text style={Styles.topScorersText}>Top Scorers:</Text>
           <View>
             <ScrollView style={Styles.scorersScrollView}>
               { Array(5).fill().map((_, i) => {
@@ -24,11 +26,12 @@ class DisplayScreen extends React.Component {
               }
             </ScrollView>
           </View>
-          <View>
-            <ConnectedBackButton />
-          </View>
+        </View>
+        <View style={{ marginTop: 30 }}>
+          <ConnectedBackButton />
+        </View>
       </View>
-    )
+     )
   }
 }
 

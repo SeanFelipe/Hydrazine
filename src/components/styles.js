@@ -85,7 +85,6 @@ export const Styles = {
   topScorersContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     //borderWidth: 4,
     //borderColor: '#accaf9',
   },
@@ -198,14 +197,6 @@ export const MatchStudentStyles = {
     marginTop: 6,
     fontSize: 18,
   },
-  backButton: {
-    flex: 1,
-    marginTop: 3,
-    marginRight: 4,
-    backgroundColor: '#dddddd',
-    borderRadius: 4,
-    fontSize: 24,
-  },
   clearButton: {
     flex: 1,
     flexDirection: 'row',
@@ -280,8 +271,10 @@ export const Expr = {
     marginTop: 3,
   },
   splashMenu: {
-    flex: 4,
+    flex: 8,
     alignItems: 'center',
+    minWidth: 0,
+    minHeight: 0,
   },
    menuText: {
     fontFamily: "System",

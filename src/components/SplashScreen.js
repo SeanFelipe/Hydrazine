@@ -20,6 +20,7 @@ class SplashScreen extends React.Component {
 
     this.animDuration = 1500
     this.textDuration = 1000
+    this.changeScreenFadeOutDuration = 1000
 
     const xfactor = 0.8
     const yfactor = 0.4
@@ -31,6 +32,7 @@ class SplashScreen extends React.Component {
 
     this.state = {
       fy: new Animated.Value(-200),
+      opacityTop: new Animated.Value(1),
       opacityFutbol: new Animated.Value(0),
       opacityData: new Animated.Value(0),
       opacityCl: new Animated.Value(0),
@@ -44,6 +46,7 @@ class SplashScreen extends React.Component {
     this.futbolAnim = this.futbolAnim.bind(this)
     this.startTextAnim = this.startTextAnim.bind(this)
     this.startFadeIn = this.startFadeIn.bind(this)
+    this.startFadeOut = this.startFadeOut.bind(this)
     this.startPulsingAnim = this.startPulsingAnim.bind(this)
 
     this.triggerDisplayScreen = this.triggerDisplayScreen.bind(this)
@@ -74,7 +77,9 @@ class SplashScreen extends React.Component {
   }
 
   triggerDisplayScreen() {
-    this.props.dispatch(changeScreen('Display'))
+    console.log("TDS()")
+    this.startFadeOut(this.state.opacityTop, this.changeScreenFadeOutDuration)
+    setTimeout(() => { this.props.dispatch(changeScreen('Display')) }, this.changeScreenFadeOutDuration)
   }
 
   triggerAboutScreen() {
@@ -105,6 +110,16 @@ class SplashScreen extends React.Component {
       val, {
         toValue: 1,
         delay
+      }
+    ).start()
+  }
+
+  startFadeOut(val, duration) {
+    console.log("startFadeOut() with duration: " + duration)
+    Animated.timing(
+      val, {
+        toValue: 0,
+        duration,
       }
     ).start()
   }
@@ -144,7 +159,7 @@ class SplashScreen extends React.Component {
 
 
     return (
-      <View>
+      <Animated.View style={{ opacity: this.state.opacityTop }}>
         <View style={Expr.animContainer}>
           <View style={Expr.flex}>
             <Animated.View style={ballStyle}>
@@ -187,7 +202,7 @@ class SplashScreen extends React.Component {
             </Animated.View>
           </View>
         </View>
-      </View>
+      </Animated.View>
     )
   }
 }

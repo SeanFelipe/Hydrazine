@@ -38,12 +38,12 @@ export function changeScreen (screen) {
   }
 }
 
-export function handleInitialLoad () {
+export function handleInitialLoad (screen='Splash') {
   return (dispatch) => {
     initialDataCall()
     .then((records) => {
       dispatch(setInitialData(records))
-      dispatch(setScreen('Splash'))
+      dispatch(setScreen(screen))
     })
   }
 }
