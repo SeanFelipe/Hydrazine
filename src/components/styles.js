@@ -130,10 +130,9 @@ export const Styles = {
     marginTop: 6,
     marginBottom: 6,
   },
-  detailsContainer: {
-  },
   playerDetails: {
-    fontFamily: "Lato",
+    fontFamily: "System",
+    //fontFamily: "Lato",
     color:'#ffffff',
     fontSize: 14,
   },

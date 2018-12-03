@@ -14,10 +14,8 @@ export class PlayerRow extends React.Component {
         bracketOpacity: new Animated.Value(0),
       }
 
-    //console.log("playerData with record: " + JSON.stringify(this.props.record))
     this.renderPlayerData = this.renderPlayerData.bind(this)
     this.selectPlayer = this.selectPlayer.bind(this)
-    //this.togglePressed = this.togglePressed.bind(this)
     this.determineShowBrackets = this.determineShowBrackets.bind(this)
     this.bracketAnim = this.bracketAnim.bind(this)
 
@@ -31,8 +29,6 @@ export class PlayerRow extends React.Component {
 
   selectPlayer() {
     this.props.dispatch(setSelectedPlayer(this.props.record.player.name))
-    //this.setState( { pressed: ! this.state.pressed })
-    //console.log("togglePressed for: " + this.props.record.player.name + "pressed: " + this.state.pressed)
   }
 
   renderPlayerData() {
@@ -97,7 +93,6 @@ export class PlayerRow extends React.Component {
     return (
       <View style={Styles.playerRowContainer} >
         <View style={Styles.playerNameRowContainer} >
-
           { showBrackets
             ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Styles.bracket}>[</Text></Animated.View>
             : null
@@ -115,14 +110,11 @@ export class PlayerRow extends React.Component {
         </View>
 
         <View style={Styles.playerDataContainer}>
-
-
-        { selected
-          ? this.renderPlayerData()
-          : null
-        }
+          { selected
+            ? this.renderPlayerData()
+            : null
+          }
         </View>
-
       </View>
     )
   }
