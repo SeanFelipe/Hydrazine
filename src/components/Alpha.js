@@ -18,9 +18,9 @@ class Alpha extends React.Component {
   }
 
   componentDidMount() {
-    //this.props.dispatch(appActions.handleInitialLoad())
+    this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.handleInitialLoad('Display'))
-    this.props.dispatch(appActions.setInitialScreen('About'))
+    //this.props.dispatch(appActions.setInitialScreen('About'))
   }
 
   nav(tag) {
