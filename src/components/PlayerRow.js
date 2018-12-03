@@ -36,7 +36,7 @@ export class PlayerRow extends React.Component {
     const numGoals = this.props.record.numberOfGoals
 
     return (
-      <View style={Styles.detailsContainer}>
+      <View>
         <Text style={Styles.playerDetails}>Nationality: { infos.nationality }</Text>
         <Text style={Styles.playerDetails}>Shirt Number: { infos.shirtNumber }</Text>
         <Text style={Styles.playerDetails}>Goals: { numGoals }</Text>

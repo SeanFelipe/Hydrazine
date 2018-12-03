@@ -25,8 +25,8 @@ class AboutScreen extends React.Component {
     //this.fadeOutBeginTime = this.textAnimDuration - this.fadeDuration
     this.fadeOutBeginTime = 6000
     this.timeBetweenScrollers = 3000
-
     this.backButtonFadeInTime = 7000
+
 
     this.sw = Dimensions.get('window').width
     this.sh = Dimensions.get('window').height
@@ -44,7 +44,7 @@ class AboutScreen extends React.Component {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
       api         : 'API data from football-data.org.',
       redux       : 'State management for screens + data by Redux.',
-      platform    : "React-Universal-UI\nfor web + mobile builds\nfrom the same codebase!",
+      platform    : "React-Universal-UI for web + mobile builds\n... from the same codebase!",
       animations  : 'Animations with React Native Animated toolkit.',
       zero        : 'Inspiration from Zero Wing...',
       justice     : '...for great justice.',
@@ -57,20 +57,33 @@ class AboutScreen extends React.Component {
     this.fadeOut = this.fadeOut.bind(this)
     this.initializeAnims = this.initializeAnims.bind(this)
     this.beginAnimationChain = this.beginAnimationChain.bind(this)
+    this.setFinalFadeOut = this.setFinalFadeOut.bind(this)
   }
 
   componentDidMount() {
     this.initializeAnims()
     this.beginAnimationChain()
+    this.setFinalFadeOut()
   }
 
   backButton() {
     this.props.dispatch(changeScreen('Splash'))
   }
 
+  setFinalFadeOut() {
+    const finalFadeOutTime = 25000
+    //const finalFadeOutTime = this.textAnimDuration + ( Object.keys(this.strings).length * this.timeBetweenScrollers )
+    setTimeout(() => {
+      this.fadeOut('top')
+      setTimeout(this.backButton, 1000)
+    },
+    finalFadeOutTime)
+  }
+
   initializeAnims() {
     ops = {
-      backButton: new Animated.Value(0)
+      top: new Animated.Value(1),
+      backButton: new Animated.Value(0),
     }
 
     ypos = {}
@@ -116,7 +129,7 @@ class AboutScreen extends React.Component {
   }
 
   fadeIn(val) {
-    console.log("fadeIn(): " + val)
+    //console.log("fadeIn(): " + val)
     Animated.timing(
       this.state.opacities[val], {
         toValue: 1,
@@ -126,7 +139,7 @@ class AboutScreen extends React.Component {
   }
 
   fadeOut(val) {
-    //console.log("fadeOut() for val: " + val)
+    //console.log("fadeOut() for val: " + JSON.stringify(val))
     Animated.timing(
       this.state.opacities[val], {
         toValue: 0,
@@ -143,13 +156,11 @@ class AboutScreen extends React.Component {
       alignItems: 'center',
       width: this.sw,
       height: this.sh * 0.7,
-      //borderColor: '#accaf9',
-      //borderWidth: 2,
     }
 
 
     return (
-      <View>
+      <Animated.View style={{ opacity: this.state.opacities.top }}>
         <View style={mainViewStyle}>
           {
             Object.keys(this.strings).map((tag, index) => {
@@ -163,7 +174,7 @@ class AboutScreen extends React.Component {
                     bottom: ypos,
                     opacity,
                   }} >
-                  <Text style={About.scrollText}>{comment}</Text>
+                  <Text style={About.aboutScrollText}>{comment}</Text>
                 </Animated.View>
               )
             })
@@ -174,7 +185,7 @@ class AboutScreen extends React.Component {
             <ConnectedBackButton />
           </Animated.View>
         </View>
-      </View>
+      </Animated.View>
     )
   }
 }

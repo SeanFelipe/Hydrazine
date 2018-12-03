@@ -300,6 +300,11 @@ export const Expr = {
 }
 
 export const About = {
+  aboutScrollText: {
+    fontFamily: 'System',
+    fontSize: 20,
+    color:'#ddeedd',
+  },
   backButtonContainer: {
     alignItems: 'center',
     borderWidth: 3,
