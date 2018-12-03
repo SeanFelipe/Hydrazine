@@ -16,9 +16,9 @@ class DisplayScreen extends React.Component {
 
     return (
       <View style={{ width: Dimensions.get('window').width }}>
-        <View style={Styles.topScorersContainer}>
-          <Text style={Styles.topScorersText}>Top Scorers:</Text>
-          <View>
+        <View style={Styles.topScorersTitleContainer}>
+          <Text style={Styles.topScorersTitleText}>Top Scorers:</Text>
+          <View style={Styles.scrollViewContainer}>
             <ScrollView style={Styles.scorersScrollView}>
               { Array(5).fill().map((_, i) => {
                   return <ConnectedPlayerRow key={i} playerRowIndex={i} record={scorers[i]}/>

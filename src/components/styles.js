@@ -82,18 +82,20 @@ export const Styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  topScorersContainer: {
+  topScorersTitleContainer: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     //borderWidth: 4,
     //borderColor: '#accaf9',
   },
   scorersScrollView: {
     flex: 1,
+    marginTop: 20,
     //maxHeight: '50%',
     //maxWidth: '50%',
   },
-  topScorersText: {
+  topScorersTitleText: {
     fontFamily: "System",
     //fontFamily: "Lato-Semibold",
     color:'#b19999',
@@ -304,21 +306,13 @@ export const About = {
     borderWidth: 3,
     borderRadius: 10,
     borderColor: '#cfccbb',
+    marginTop: 10,
     marginLeft: '40%',
     marginRight: '40%',
   },
    backButton: {
     fontFamily: "System",
-     //fontFamily: "Lato-Medium",
-    //color:'#ee9999',
     color:'#cfccbb',
     fontSize: 24,
-  },
-  scrollText: {
-    fontFamily: "System",
-    //fontFamily: "Lato-Medium",
-    //color:'#ee9999',
-    color:'#cfccbb',
-    fontSize: 18,
   },
 }
