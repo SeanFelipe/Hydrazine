@@ -30,6 +30,7 @@ class SplashScreen extends React.Component {
     this.sy = this.scy * yfactor
 
 
+
     this.state = {
       fy: new Animated.Value(-200),
       opacityTop: new Animated.Value(1),

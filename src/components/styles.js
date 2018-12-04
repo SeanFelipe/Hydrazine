@@ -95,15 +95,7 @@ export const Styles = {
     //maxHeight: '50%',
     //maxWidth: '50%',
   },
-  topScorersTitleText: {
-    fontFamily: "System",
-    //fontFamily: "Lato-Semibold",
-    color:'#b19999',
-    fontSize: 60,
-    textAlign: "center",
-    margin: 10
-  },
-  playerRowContainer: {
+ playerRowContainer: {
     flex: 1,
   },
   playerNameRowContainer: {
@@ -126,7 +118,7 @@ export const Styles = {
      //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
-    fontSize: 30,
+    fontSize: 10,
     marginTop: 6,
     marginBottom: 6,
   },
