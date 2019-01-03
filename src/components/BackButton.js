@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import { changeScreen } from '../store/actions/actions'
-import { About } from './styles'
+import { About } from '../css/styles'
 
 
 class BackButton extends React.Component {

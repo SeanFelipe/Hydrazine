@@ -8,7 +8,7 @@ import { ConnectedSplashScreen } from './SplashScreen'
 import { ConnectedAboutScreen } from './AboutScreen'
 import { Sandbox } from './Sandbox'
 
-import { Styles } from './styles'
+import { Styles } from '../css/styles'
 
 
 class Alpha extends React.Component {

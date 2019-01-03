@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 
 import { changeScreen } from '../store/actions/actions'
-import { Expr } from './styles'
+import { Expr } from '../css/styles'
 
 
 class SplashScreen extends React.Component {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, View, ScrollView, Text, TextInput, Dimensions } from 'react-native'
 
 import * as appActions from './../store/actions/actions';
-import { Styles, About } from './styles'
+import { Styles, About } from '../css/styles'
 import { ConnectedPlayerRow } from './PlayerRow'
 import { ConnectedBackButton } from './BackButton'
 

@@ -241,7 +241,7 @@ export const Expr = {
     //borderColor: '#ff33ff',
   },
   introText: {
-    fontFamily: "System",
+    fontFamily: "luckiest_guyregular",
     //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
@@ -311,4 +311,15 @@ export const About = {
     color:'#cfccbb',
     fontSize: 24,
   },
+}
+
+export const Fonts = {
+  welcome: {
+    fontFamily: "luckiest_guyregular",
+    fontSize: 30,
+    textAlign: "center",
+    margin: 10
+  },
+}
+
 }

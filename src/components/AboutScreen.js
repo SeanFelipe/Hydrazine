@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 
 import { changeScreen } from '../store/actions/actions'
-import { About, Expr } from './styles'
+import { About, Expr } from '../css/styles'
 
 import { ConnectedBackButton } from './BackButton'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Animated, Button, View, ScrollView, Text, TextInput } from 'react-native'
-import { Alpha, Styles, StudentInfoStyles } from './styles'
+import { Alpha, Styles, StudentInfoStyles } from '../css/styles'
 
 import { getSelectedPlayer, setSelectedPlayer } from './../store/actions/actions';
 
