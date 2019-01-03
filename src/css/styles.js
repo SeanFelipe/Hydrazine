@@ -89,6 +89,11 @@ export const Styles = StyleSheet.create({
     //borderWidth: 4,
     //borderColor: '#accaf9',
   },
+  topScorersTitleText: {
+    fontFamily: 'Luckiest Guy',
+    fontSize: 40,
+    color:'#ddeedd',
+  },
   scorersScrollView: {
     flex: 1,
     marginTop: 20,
@@ -112,21 +117,21 @@ export const Styles = StyleSheet.create({
     color: '#32cd32',
     fontSize: 45,
   },
-   players: {
+  players: {
     flex: 1,
-     fontFamily: "System",
+     fontFamily: "Patrick Hand SC",
      //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
-    fontSize: 10,
+    fontSize: 35,
     marginTop: 6,
     marginBottom: 6,
   },
   playerDetails: {
     fontFamily: "System",
     //fontFamily: "Lato",
-    color:'#ffffff',
-    fontSize: 14,
+    color:'#ddeedd',
+    fontSize: 18,
   },
 })
 
