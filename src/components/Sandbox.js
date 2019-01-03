@@ -8,8 +8,13 @@ import {
   Easing,
 } from 'react-native'
 
-import { Expr } from './styles'
+import { Expr, Fonts } from '../css/styles'
 
+import luckiestGuyFont from '../fonts/luckiestguy.ttf'
+const iconFontStyles = `@font-face {
+  src: url(${luckiestGuyFont});
+  font-family: LuckiestGuy;
+}`;
 
 
 export class Sandbox extends React.Component {
@@ -19,30 +24,13 @@ export class Sandbox extends React.Component {
     this.state = {
       opacity: new Animated.Value(0)
     }
-
-    this.makeTextAnim = this.makeTextAnim.bind(this)
-
-    this.makeTextAnim(this.state.opacity, 1000)
-  }
-
-  makeTextAnim(val, delay) {
-    return (
-      Animated.timing(
-        val, {
-          toValue: 1,
-          delay
-        }
-      )
-    )
   }
 
   render() {
     return (
       <View>
         <View style={Expr.main}>
-          <Animated.View style={{opacity: this.state.opacity}} >
-            <Text style={Expr.boxy}>Box One</Text>
-          </Animated.View>
+          <Text style={Fonts.luckiest}>Box One</Text>
         </View>
       </View>
     )

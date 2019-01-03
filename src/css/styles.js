@@ -70,7 +70,7 @@ export const Alpha = StyleSheet.create({
 });
 
 
-export const Styles = {
+export const Styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
@@ -128,9 +128,9 @@ export const Styles = {
     color:'#ffffff',
     fontSize: 14,
   },
-}
+})
 
-export const StudentInfoStyles = {
+export const StudentInfoStyles = StyleSheet.create({
   players: {
     borderColor: '#ee0000',
     backgroundColor:'#778899',
@@ -157,10 +157,10 @@ export const StudentInfoStyles = {
     backgroundColor: '#dddddd',
     borderRadius: 4,
   },
-}
+})
 
 
-export const MatchStudentStyles = {
+export const MatchStudentStyles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems:'center',
@@ -213,7 +213,7 @@ export const MatchStudentStyles = {
     fontSize: 24,
     backgroundColor: '#dddddd',
   },
-}
+})
 
 export const DropoffInfoBoxStyles = {
   editTop: {
@@ -241,26 +241,26 @@ export const Expr = {
     //borderColor: '#ff33ff',
   },
   introText: {
-    fontFamily: "luckiest_guyregular",
+    fontFamily: "Luckiest Guy",
     //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
-    fontSize: 30,
+    fontSize: 40,
     margin: 2,
   },
   cl: {
-    fontFamily: "System",
+    fontFamily: "Luckiest Guy",
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 30,
+    fontSize: 40,
     marginTop: 3,
     marginLeft: 2,
   },
   ient: {
-    fontFamily: "System",
+    fontFamily: "Luckiest Guy",
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 30,
+    fontSize: 40,
     marginTop: 3,
   },
   splashMenu: {
@@ -313,13 +313,39 @@ export const About = {
   },
 }
 
-export const Fonts = {
-  welcome: {
-    fontFamily: "luckiest_guyregular",
-    fontSize: 30,
+export const Fonts = StyleSheet.create({
+  size100: {
+    fontSize: 100,
+  },
+  luckiest: {
+    fontFamily: "Luckiest Guy",
     textAlign: "center",
     margin: 10
   },
-}
-
-}
+   futura: {
+    fontFamily: "Futura",
+    fontSize: 100 ,
+    textAlign: "center",
+    margin: 10
+  },
+  system: {
+    fontFamily: 'System',
+    fontSize: 20,
+    color:'#ddeedd',
+  },
+  ruboto: {
+    fontFamily: 'Ruboto',
+    fontSize: 20,
+    color:'#ddeedd',
+  },
+  lato: {
+    fontFamily: 'Lato-Medium',
+    fontSize: 20,
+    color:'#ddeedd',
+  },
+  chalkduster: {
+    fontFamily: 'Chalkduster',
+    fontSize: 20,
+    color:'#ddeedd',
+  },
+ })
