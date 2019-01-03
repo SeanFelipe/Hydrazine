@@ -43,11 +43,12 @@ class AboutScreen extends React.Component {
     this.strings = {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
       api         : 'API data from football-data.org.',
-      redux       : 'State management for screens + data by Redux.',
-      platform    : "React-Universal-UI for web + mobile builds\n... from the same codebase!",
+      redux       : 'State management by Redux.',
+      platform    : "React-Universal-UI gives us Web + Native\n...from the same codebase!",
       animations  : 'Animations with React Native Animated toolkit.',
       zero        : 'Inspiration from Zero Wing...',
       justice     : '...for great justice.',
+      //zig         : 'Take off every zig!',
     }
 
     this.backButton = this.backButton.bind(this)

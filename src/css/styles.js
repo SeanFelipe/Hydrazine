@@ -91,7 +91,7 @@ export const Styles = StyleSheet.create({
   },
   topScorersTitleText: {
     fontFamily: 'Luckiest Guy',
-    fontSize: 40,
+    fontSize: 50,
     color:'#ddeedd',
   },
   scorersScrollView: {
@@ -298,8 +298,8 @@ export const Expr = {
 
 export const About = {
   aboutScrollText: {
-    fontFamily: 'System',
-    fontSize: 20,
+    fontFamily: 'Patrick Hand SC',
+    fontSize: 22,
     color:'#ddeedd',
   },
   backButtonContainer: {
@@ -312,8 +312,10 @@ export const About = {
     marginRight: '40%',
   },
    backButton: {
-    fontFamily: "System",
+    fontFamily: "Luckiest Guy",
     color:'#cfccbb',
+     paddingTop: 8,
+    paddingBottom: 2,
     fontSize: 24,
   },
 }
