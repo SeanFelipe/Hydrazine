@@ -245,14 +245,14 @@ export const Expr = {
     //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
-    fontSize: 40,
+    fontSize: 45,
     margin: 2,
   },
   cl: {
     fontFamily: "Luckiest Guy",
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 40,
+    fontSize: 45,
     marginTop: 3,
     marginLeft: 2,
   },
@@ -260,7 +260,7 @@ export const Expr = {
     fontFamily: "Luckiest Guy",
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 40,
+    fontSize: 45,
     marginTop: 3,
   },
   splashMenu: {
@@ -270,11 +270,11 @@ export const Expr = {
     minHeight: 0,
   },
    menuText: {
-    fontFamily: "System",
+    fontFamily: "Patrick Hand SC",
      //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#cfccbb',
-    fontSize: 25,
+    fontSize: 35,
     margin: 2,
   },
   main: {
@@ -346,6 +346,11 @@ export const Fonts = StyleSheet.create({
   chalkduster: {
     fontFamily: 'Chalkduster',
     fontSize: 20,
+    color:'#ddeedd',
+  },
+  patrickSc: {
+    fontFamily: 'Patrick Hand SC',
+    fontSize: 50,
     color:'#ddeedd',
   },
  })
