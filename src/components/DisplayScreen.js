@@ -13,9 +13,23 @@ class DisplayScreen extends React.Component {
 
     const scorers = this.props.initialData.scorers
     //<View style={ Styles.topScorersContainer }>
+      /*
+      <View style={{ width: Dimensions.get('window').width }}>
+        <View style={Styles.topScorersTitleContainer}>
+          <Text style={Styles.topScorersTitleText}>Top Scorers:</Text>
+          <View style={Styles.scrollViewContainer}>
+            <ScrollView style={Styles.scorersScrollView}>
+              { Array(5).fill().map((_, i) => {
+                  return <ConnectedPlayerRow key={i} playerRowIndex={i} record={scorers[i]}/>
+                })
+              }
+            </ScrollView>
+          </View>
+        </View>
+        */
 
     return (
-      <View style={{ width: Dimensions.get('window').width }}>
+      <View>
         <View style={Styles.topScorersTitleContainer}>
           <Text style={Styles.topScorersTitleText}>Top Scorers:</Text>
           <View style={Styles.scrollViewContainer}>

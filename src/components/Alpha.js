@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text } from 'react-native'
+import { Platform, View, Text } from 'react-native'
 import * as appActions from './../store/actions/actions';
 
 import { ConnectedDisplayScreen } from './DisplayScreen'
@@ -15,11 +15,12 @@ class Alpha extends React.Component {
   constructor(props) {
     super(props)
     this.nav = this.nav.bind(this)
+    console.log("Alpha constructor() for platform: " + Platform.OS)
   }
 
   componentDidMount() {
-    this.props.dispatch(appActions.handleInitialLoad())
-    //this.props.dispatch(appActions.handleInitialLoad('Sandbox'))
+    //this.props.dispatch(appActions.handleInitialLoad())
+    this.props.dispatch(appActions.handleInitialLoad('Sandbox'))
     //this.props.dispatch(appActions.setInitialScreen('Splash'))
   }
 

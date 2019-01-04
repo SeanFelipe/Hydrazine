@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 
 import { changeScreen } from '../store/actions/actions'
-import { Expr, Fonts } from '../css/styles'
+import { Expr } from '../css/styles'
 
 
 class SplashScreen extends React.Component {
@@ -149,14 +149,16 @@ class SplashScreen extends React.Component {
       bottom: 120,
     }
 
+      /*
     const dims = {
       width: this.sx,
       height: this.sy,
     }
+    */
     //console.log("dims: " + JSON.stringify(dims))
 
     // animContainer needs dynamically made dimensions
-    Object.assign(Expr.animContainer, dims)
+    //Object.assign(Expr.animContainer, dims)
 
 
     return (

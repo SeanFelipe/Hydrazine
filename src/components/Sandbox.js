@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Platform,
   View,
   Text,
   Image,
@@ -9,12 +10,6 @@ import {
 } from 'react-native'
 
 import { Expr, Fonts } from '../css/styles'
-
-import luckiestGuyFont from '../fonts/luckiestguy.ttf'
-const iconFontStyles = `@font-face {
-  src: url(${luckiestGuyFont});
-  font-family: LuckiestGuy;
-}`;
 
 
 export class Sandbox extends React.Component {

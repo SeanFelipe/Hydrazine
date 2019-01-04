@@ -89,6 +89,11 @@ export const Styles = StyleSheet.create({
     //borderWidth: 4,
     //borderColor: '#accaf9',
   },
+  topScorersTitleText: {
+    fontFamily: 'Luckiest Guy',
+    fontSize: 50,
+    color:'#ddeedd',
+  },
   scorersScrollView: {
     flex: 1,
     marginTop: 20,
@@ -111,6 +116,22 @@ export const Styles = StyleSheet.create({
    bracket: {
     color: '#32cd32',
     fontSize: 45,
+  },
+  players: {
+    flex: 1,
+     fontFamily: "Patrick Hand SC",
+     //fontFamily: "Lato-Medium",
+    //color:'#ee9999',
+    color:'#ddeedd',
+    fontSize: 35,
+    marginTop: 6,
+    marginBottom: 6,
+  },
+  playerDetails: {
+    fontFamily: "System",
+    //fontFamily: "Lato",
+    color:'#ddeedd',
+    fontSize: 18,
   },
 })
 
@@ -224,11 +245,42 @@ export const Expr = {
     //borderWidth: 2,
     //borderColor: '#ff33ff',
   },
+  introText: {
+    fontFamily: "Luckiest Guy",
+    //fontFamily: "Lato-Medium",
+    //color:'#ee9999',
+    color:'#ddeedd',
+    fontSize: 45,
+    margin: 2,
+  },
+  cl: {
+    fontFamily: "Luckiest Guy",
+    //fontFamily: "Lato-Medium",
+    color:'#ddeedd',
+    fontSize: 45,
+    marginTop: 3,
+    marginLeft: 2,
+  },
+  ient: {
+    fontFamily: "Luckiest Guy",
+    //fontFamily: "Lato-Medium",
+    color:'#ddeedd',
+    fontSize: 45,
+    marginTop: 3,
+  },
   splashMenu: {
     flex: 8,
     alignItems: 'center',
     minWidth: 0,
     minHeight: 0,
+  },
+   menuText: {
+    fontFamily: "Patrick Hand SC",
+     //fontFamily: "Lato-Medium",
+    //color:'#ee9999',
+    color:'#cfccbb',
+    fontSize: 35,
+    margin: 2,
   },
   main: {
     flex: 1,
@@ -245,6 +297,11 @@ export const Expr = {
 }
 
 export const About = {
+  aboutScrollText: {
+    fontFamily: 'Patrick Hand SC',
+    fontSize: 22,
+    color:'#ddeedd',
+  },
   backButtonContainer: {
     alignItems: 'center',
     borderWidth: 3,
@@ -254,6 +311,13 @@ export const About = {
     marginLeft: '40%',
     marginRight: '40%',
   },
+   backButton: {
+    fontFamily: "Luckiest Guy",
+    color:'#cfccbb',
+     paddingTop: 8,
+    paddingBottom: 2,
+    fontSize: 24,
+  },
 }
 
 export const Fonts = StyleSheet.create({
@@ -261,7 +325,7 @@ export const Fonts = StyleSheet.create({
     fontSize: 100,
   },
   luckiest: {
-    fontFamily: "Luckiest Guy",
+    fontFamily: "luckiestguy",
     textAlign: "center",
     margin: 10,
     fontSize: 40,

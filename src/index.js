@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { Platform, View, Text, StyleSheet } from 'react-native';
 import { utils, RuuiProvider, Button, Tooltip } from 'react-universal-ui';
 import { connect, Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import { store } from './store';
 import { increaseCounter } from './store/actions/actions';
-//import { ConnectedAlpha } from './components/Alpha.js';
 import { ConnectedAlpha } from './components/Alpha.js';
 
 import { IndexStyles } from './css/styles'
