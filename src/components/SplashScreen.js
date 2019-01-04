@@ -12,6 +12,7 @@ import {
 
 import { changeScreen } from '../store/actions/actions'
 import { Expr } from '../css/styles'
+import { Fonts } from '../css/fonts'
 
 
 class SplashScreen extends React.Component {
@@ -171,25 +172,25 @@ class SplashScreen extends React.Component {
           </View>
           <Animated.View style={introFontContainer}>
             <Animated.View style={{opacity: this.state.opacityFutbol}}>
-              <Text style={Expr.introText}>Futbol</Text>
+              <Text style={Fonts.introText}>Futbol</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityData}}>
-              <Text style={Expr.introText}>Data</Text>
+              <Text style={Fonts.introText}>Data</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityCl}}>
-              <Text style={Expr.cl}>Cl</Text>
+              <Text style={Fonts.cl}>Cl</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityIe}}>
-              <Text style={Expr.ient}>ie</Text>
+              <Text style={Fonts.ient}>ie</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityNt}}>
-              <Text style={Expr.ient}>nt</Text>
+              <Text style={Fonts.ient}>nt</Text>
             </Animated.View>
           </Animated.View>
           <View style={Expr.splashMenu}>
             <Animated.View style={{opacity: this.state.opacityTopScorers}}>
               <Text
-                style={Expr.menuText}
+                style={Fonts.menuText}
                 onPress={this.triggerDisplayScreen}
               >
                 Top Scorers
@@ -197,7 +198,7 @@ class SplashScreen extends React.Component {
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityAbout}}>
               <Text
-                style={Expr.menuText}
+                style={Fonts.menuText}
                 onPress={this.triggerAboutScreen}
               >
                 About

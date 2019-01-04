@@ -1,4 +1,4 @@
-import { Platform } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 
 const PLAT = Platform.OS
 
@@ -6,20 +6,24 @@ const getFontRef = (tag) => {
   fontKeys = {
     patrick: ['Patrick Hand SC','patrickhandsc'],
     luckiest: ['Luckiest Guy','luckiestguy'],
-    luckiest: ['Luckiest Guy','luckiestguy'],
   }
-  switch (tag) {
-    case 'patrick'
+  switch (PLAT) {
+    case 'web':
+      return fontKeys[tag][0]
+    case 'ios':
+      return fontKeys[tag][0]
+    case 'android':
+      return fontKeys[tag][1]
+    default:
+      return fontKeys[tag][0]
   }
-
-
 }
 
 
 
 export const Fonts = StyleSheet.create({
   topScorersTitleText: {
-    fontFamily: 'Luckiest Guy',
+    fontFamily: `${getFontRef('luckiest')}`,
     fontSize: 50,
     color:'#ddeedd',
   },
@@ -39,9 +43,6 @@ export const Fonts = StyleSheet.create({
     color:'#ddeedd',
     fontSize: 18,
   },
-})
-
-export const ExprFonts = StyleSheet.create({
   introText: {
     fontFamily: `${getFontRef('luckiest')}`,
     //fontFamily: "Lato-Medium",
@@ -73,9 +74,6 @@ export const ExprFonts = StyleSheet.create({
     fontSize: 35,
     margin: 2,
   },
-})
-
-export const AboutFonts = {
   aboutScrollText: {
     fontFamily: `${getFontRef('patrick')}`,
     fontSize: 22,
@@ -87,5 +85,5 @@ export const AboutFonts = {
     paddingTop: 8,
     paddingBottom: 2,
     fontSize: 24,
-  },
-}
+  }
+})
