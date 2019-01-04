@@ -26,17 +26,11 @@ export const Styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 30,
   },
   scrollViewContainer: {
     flex: 1,
     marginTop: 50,
-  },
-  scorersScrollView: {
-    flex: 1,
-    marginTop: 50,
-  },
-  playerRowContainer: {
-    flex: 1,
   },
   playerNameRowContainer: {
     flex: 1,
@@ -90,8 +84,8 @@ export const About = {
     borderWidth: 3,
     borderRadius: 10,
     borderColor: '#cfccbb',
-    marginTop: 10,
     marginLeft: '40%',
     marginRight: '40%',
+    marginBottom: 20,
   },
 }

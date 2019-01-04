@@ -44,10 +44,10 @@ class AboutScreen extends React.Component {
     this.strings = {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
       api         : 'API from football-data.org.',
-      redux       : 'State management by Redux.',
+      redux       : 'State + screens management by Redux.',
       platform    : "React-Universal-UI gives us Web + Native\n...from the same codebase!",
       animations  : 'Animations with React Native Animated toolkit.',
-      zero        : 'Inspiration from Zero Wing...',
+      zero        : 'Inspiration by Zero Wing...',
       justice     : '...for great justice.',
       //zig         : 'Take off every zig!',
     }
