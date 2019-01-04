@@ -12,6 +12,7 @@ import {
 
 import { changeScreen } from '../store/actions/actions'
 import { About, Expr } from '../css/styles'
+import { Fonts } from '../css/fonts'
 
 import { ConnectedBackButton } from './BackButton'
 
@@ -42,7 +43,7 @@ class AboutScreen extends React.Component {
 
     this.strings = {
       attempt     : 'An attempt to demonstrate some ReactJS skills.',
-      api         : 'API data from football-data.org.',
+      api         : 'API from football-data.org.',
       redux       : 'State management by Redux.',
       platform    : "React-Universal-UI gives us Web + Native\n...from the same codebase!",
       animations  : 'Animations with React Native Animated toolkit.',
@@ -175,7 +176,7 @@ class AboutScreen extends React.Component {
                     bottom: ypos,
                     opacity,
                   }} >
-                  <Text style={About.aboutScrollText}>{comment}</Text>
+                  <Text style={Fonts.aboutScrollText}>{comment}</Text>
                 </Animated.View>
               )
             })

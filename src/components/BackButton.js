@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 
 import { changeScreen } from '../store/actions/actions'
+import { Fonts } from '../css/fonts'
 import { About } from '../css/styles'
 
 
@@ -23,7 +24,7 @@ class BackButton extends React.Component {
   render() {
     return (
       <View style={About.backButtonContainer}>
-        <Text style={About.backButton} onPress={this.back}>Back</Text>
+        <Text style={Fonts.backButton} onPress={this.back}>Back</Text>
       </View>
     )
   }
