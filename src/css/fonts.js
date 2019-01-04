@@ -28,7 +28,6 @@ export const Fonts = StyleSheet.create({
     color:'#ddeedd',
   },
   players: {
-    flex: 1,
     fontFamily: `${getFontRef('patrick')}`,
     color:'#ddeedd',
     fontSize: 35,
@@ -84,7 +83,10 @@ export const Fonts = StyleSheet.create({
     fontSize: 24,
   },
   bracket: {
+    marginTop: -8,
+    marginLeft: 4,
+    marginRight: 4,
     color: '#32cd32',
-    fontSize: 30,
+    fontSize: 50,
   },
 })

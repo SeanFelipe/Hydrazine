@@ -4,7 +4,7 @@ import { Animated, Button, View, ScrollView, Text, TextInput } from 'react-nativ
 
 import { getSelectedPlayer, setSelectedPlayer } from './../store/actions/actions';
 
-import { Alpha, Styles, StudentInfoStyles } from '../css/styles'
+import { Alpha, Styles, Expr } from '../css/styles'
 import { Fonts } from '../css/fonts'
 
 
@@ -82,9 +82,6 @@ export class PlayerRow extends React.Component {
    render() {
 
     let { bracketOpacity } = this.state
-    let pulseBracket = Object.assign({
-      opacity: bracketOpacity
-    }, Styles.bracket)
 
     const showBrackets = this.determineShowBrackets()
     const selected = this.props.record.player.name === this.props.selectedPlayer ? true : false
@@ -92,26 +89,25 @@ export class PlayerRow extends React.Component {
     //console.log("playerData render() selected: " + selected)
 
        /*
-      <View style={Styles.playerRowContainer} >
+
+        <Text style={Fonts.players}>Foo</Text>
+        <Text style={Fonts.players}>Bar</Text>
+        <Text style={Fonts.players}>Baz</Text>
 
 
-        <View style={Styles.playerDataContainer}>
-          { selected
-            ? this.renderPlayerData()
-            : null
-          }
-        </View>
-        *
-      </View>
-        *
+
+
+       *
         */
 
 
 
     return (
+      <View style={Styles.playerRowContainer} >
+
         <View style={Styles.playerNameRowContainer} >
           { showBrackets
-            ? <Animated.View style={{flex: 1, opacity: bracketOpacity}}><Text style={Fonts.bracket}>[</Text></Animated.View>
+            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>[</Text></Animated.View>
             : null
           }
 
@@ -120,12 +116,20 @@ export class PlayerRow extends React.Component {
           </Text>
 
           { showBrackets
-            ? <Animated.View style={{flex: 1, opacity: bracketOpacity}}><Text style={Fonts.bracket}>]</Text></Animated.View>
+            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>]</Text></Animated.View>
             : null
           }
 
         </View>
 
+        <View style={Styles.playerDataContainer}>
+          { selected
+            ? this.renderPlayerData()
+            : null
+          }
+        </View>
+
+      </View>
     )
   }
 }

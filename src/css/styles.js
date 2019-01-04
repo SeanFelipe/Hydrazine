@@ -10,7 +10,6 @@ export const IndexStyles = StyleSheet.create({
   },
 });
 
-
 export const Styles = StyleSheet.create({
   flex: {
     flex: 1,
@@ -32,7 +31,7 @@ export const Styles = StyleSheet.create({
     flex: 1,
     marginTop: 50,
   },
-   scorersScrollView: {
+  scorersScrollView: {
     flex: 1,
     marginTop: 50,
   },
@@ -41,11 +40,10 @@ export const Styles = StyleSheet.create({
   },
   playerNameRowContainer: {
     flex: 1,
-    borderWidth: 4,
-    borderColor: '#32cd32',
-    //flexDirection: 'row',
+    //borderWidth: 4,
+    //borderColor: '#32cd32',
+    flexDirection: 'row',
     alignSelf: 'center',
-    flexShrink: 0,
   },
   playerDataContainer: {
     flex: 1,
@@ -54,75 +52,11 @@ export const Styles = StyleSheet.create({
   },
 })
 
-export const MatchStudentStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems:'center',
-    justifyContent:'center',
-  },
-  topView: {
-    alignItems: 'flex-start',
-    flex: 1,
-  },
-  midView: {
-    flex: 2,
-    marginTop: 10,
-    marginBottom: 10,
-    backgroundColor: '#dddddd',
-    borderRadius: 4,
-  },
-  studentData: {
-    flex: 1,
-    marginTop: 4,
-    marginLeft: 2,
-    marginRight: 1,
-  },
-  nameText: {
-    fontSize: 24,
-  },
-  checkInText: {
-    marginTop: 6,
-    fontSize: 18,
-  },
-  clearButton: {
+export const Expr = {
+  rowStyle: {
     flex: 1,
     flexDirection: 'row',
   },
-  checkInButton: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  textContainer: {
-    flex: 5,
-  },
-  text: {
-    fontSize: 24,
-  },
-  editText: {
-    borderWidth: 4,
-    borderColor: '#accaf9',
-    fontSize: 24,
-  },
-  checkIn: {
-    fontSize: 24,
-    backgroundColor: '#dddddd',
-  },
-})
-
-export const DropoffInfoBoxStyles = {
-  editTop: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  editText: {
-    flex: 6,
-    borderWidth: 4,
-    borderColor: '#accaf9',
-    fontSize: 24,
-  },
-}
-
-export const Expr = {
   flex: {
     flex: 7,
   },
