@@ -108,10 +108,6 @@ export const Styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
   },
-   bracket: {
-    color: '#32cd32',
-    fontSize: 45,
-  },
 })
 
 export const StudentInfoStyles = StyleSheet.create({

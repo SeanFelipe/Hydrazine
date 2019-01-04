@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import { Button, View, ScrollView, Text, TextInput, Dimensions } from 'react-native'
 
 import * as appActions from './../store/actions/actions';
-import { Styles, About } from '../css/styles'
 import { ConnectedPlayerRow } from './PlayerRow'
 import { ConnectedBackButton } from './BackButton'
 
+import { Styles, About } from '../css/styles'
+import { Fonts } from '../css/fonts'
 
 class DisplayScreen extends React.Component {
   render() {
@@ -31,7 +32,7 @@ class DisplayScreen extends React.Component {
     return (
       <View>
         <View style={Styles.topScorersTitleContainer}>
-          <Text style={Styles.topScorersTitleText}>Top Scorers:</Text>
+          <Text style={Fonts.topScorersTitleText}>Top Scorers:</Text>
           <View style={Styles.scrollViewContainer}>
             <ScrollView style={Styles.scorersScrollView}>
               { Array(5).fill().map((_, i) => {

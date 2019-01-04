@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Animated, Button, View, ScrollView, Text, TextInput } from 'react-native'
-import { Alpha, Styles, StudentInfoStyles } from '../css/styles'
 
 import { getSelectedPlayer, setSelectedPlayer } from './../store/actions/actions';
+
+import { Alpha, Styles, StudentInfoStyles } from '../css/styles'
+import { Fonts } from '../css/fonts'
 
 
 export class PlayerRow extends React.Component {
@@ -37,10 +39,10 @@ export class PlayerRow extends React.Component {
 
     return (
       <View>
-        <Text style={Styles.playerDetails}>Nationality: { infos.nationality }</Text>
-        <Text style={Styles.playerDetails}>Shirt Number: { infos.shirtNumber }</Text>
-        <Text style={Styles.playerDetails}>Goals: { numGoals }</Text>
-        <Text style={Styles.playerDetails}>Birth date: { infos.dateOfBirth }</Text>
+        <Text style={Fonts.playerDetails}>Nationality: { infos.nationality }</Text>
+        <Text style={Fonts.playerDetails}>Shirt Number: { infos.shirtNumber }</Text>
+        <Text style={Fonts.playerDetails}>Goals: { numGoals }</Text>
+        <Text style={Fonts.playerDetails}>Birth date: { infos.dateOfBirth }</Text>
       </View>
     )
   }
@@ -94,16 +96,16 @@ export class PlayerRow extends React.Component {
       <View style={Styles.playerRowContainer} >
         <View style={Styles.playerNameRowContainer} >
           { showBrackets
-            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Styles.bracket}>[</Text></Animated.View>
+            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>[</Text></Animated.View>
             : null
           }
 
-          <Text style={Styles.players} onPress={this.selectPlayer} >
+          <Text style={Fonts.players} onPress={this.selectPlayer} >
             { this.props.record.player.name }
           </Text>
 
           { showBrackets
-            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Styles.bracket}>]</Text></Animated.View>
+            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>]</Text></Animated.View>
             : null
           }
 
