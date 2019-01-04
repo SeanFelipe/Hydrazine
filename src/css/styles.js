@@ -10,65 +10,6 @@ export const IndexStyles = StyleSheet.create({
   },
 });
 
-export const Alpha = StyleSheet.create({
-  flex: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-  flexOnly: {
-    flex: 1,
-  },
-  row: {
-    flexDirection: 'row',
-  },
-
-  locationFilter: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-
-  locationButton: {
-    flex: 1,
-    marginRight: 4,
-    marginLeft: 4,
-  },
-
-  scroller: {
-    flex: 10,
-    marginTop: 60,
-    marginLeft: 30,
-    marginRight: 30,
-    borderWidth: 4,
-    borderColor: '#accaf9',
-  },
-
-  filter: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-
-  filterTextInput: {
-    textAlign: 'center',
-    borderWidth: 1,
-    fontSize: 24,
-  },
-
-  studentsRetrieved: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 2,
-
-  },
-  studentsRetrievedText: {
-    marginTop: 1
-  },
-});
-
 
 export const Styles = StyleSheet.create({
   flex: {
@@ -87,20 +28,27 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  scorersScrollView: {
+  scrollViewContainer: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 50,
+  },
+   scorersScrollView: {
+    flex: 1,
+    marginTop: 50,
   },
   playerRowContainer: {
-    //flex: 1,
+    flex: 1,
   },
   playerNameRowContainer: {
-    //flex: 1,
-    //flexDirection: "row",
-    //alignItems: "center",
+    flex: 1,
+    borderWidth: 4,
+    borderColor: '#32cd32',
+    //flexDirection: 'row',
+    alignSelf: 'center',
+    flexShrink: 0,
   },
   playerDataContainer: {
-    //flex: 1,
+    flex: 1,
     //flexDirection: "column",
     //alignItems: "center",
   },

@@ -91,11 +91,27 @@ export class PlayerRow extends React.Component {
 
     //console.log("playerData render() selected: " + selected)
 
-    return (
+       /*
       <View style={Styles.playerRowContainer} >
+
+
+        <View style={Styles.playerDataContainer}>
+          { selected
+            ? this.renderPlayerData()
+            : null
+          }
+        </View>
+        *
+      </View>
+        *
+        */
+
+
+
+    return (
         <View style={Styles.playerNameRowContainer} >
           { showBrackets
-            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>[</Text></Animated.View>
+            ? <Animated.View style={{flex: 1, opacity: bracketOpacity}}><Text style={Fonts.bracket}>[</Text></Animated.View>
             : null
           }
 
@@ -104,19 +120,12 @@ export class PlayerRow extends React.Component {
           </Text>
 
           { showBrackets
-            ? <Animated.View style={{opacity: bracketOpacity}}><Text style={Fonts.bracket}>]</Text></Animated.View>
+            ? <Animated.View style={{flex: 1, opacity: bracketOpacity}}><Text style={Fonts.bracket}>]</Text></Animated.View>
             : null
           }
 
         </View>
 
-        <View style={Styles.playerDataContainer}>
-          { selected
-            ? this.renderPlayerData()
-            : null
-          }
-        </View>
-      </View>
     )
   }
 }
