@@ -35,7 +35,8 @@ export const Fonts = StyleSheet.create({
     //marginBottom: 6,
   },
   playerDetails: {
-    fontFamily: `${getFontRef('patrick')}`,
+    //fontFamily: `${getFontRef('patrick')}`,
+    fontFamily: 'System',
     color:'#ddeedd',
     fontSize: 18,
   },
@@ -83,7 +84,7 @@ export const Fonts = StyleSheet.create({
     fontSize: 24,
   },
   bracket: {
-    marginTop: -8,
+    marginTop: -10,
     marginLeft: 4,
     marginRight: 4,
     color: '#32cd32',

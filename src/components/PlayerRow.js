@@ -37,7 +37,7 @@ export class PlayerRow extends React.Component {
     const numGoals = this.props.record.numberOfGoals
 
     return (
-      <View>
+      <View style={Styles.playerDetailsContainer}>
         <Text style={Fonts.playerDetails}>Nationality: { infos.nationality }</Text>
         <Text style={Fonts.playerDetails}>Shirt Number: { infos.shirtNumber }</Text>
         <Text style={Fonts.playerDetails}>Goals: { numGoals }</Text>
@@ -87,18 +87,6 @@ export class PlayerRow extends React.Component {
     const selected = this.props.record.player.name === this.props.selectedPlayer ? true : false
 
     //console.log("playerData render() selected: " + selected)
-
-       /*
-
-        <Text style={Fonts.players}>Foo</Text>
-        <Text style={Fonts.players}>Bar</Text>
-        <Text style={Fonts.players}>Baz</Text>
-
-
-
-
-       *
-        */
 
 
 

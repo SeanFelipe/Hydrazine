@@ -40,15 +40,11 @@ export const Styles = StyleSheet.create({
   },
   playerNameRowContainer: {
     flex: 1,
-    //borderWidth: 4,
-    //borderColor: '#32cd32',
     flexDirection: 'row',
     alignSelf: 'center',
   },
-  playerDataContainer: {
-    flex: 1,
-    //flexDirection: "column",
-    //alignItems: "center",
+  playerDetailsContainer: {
+    alignSelf: "center",
   },
 })
 
