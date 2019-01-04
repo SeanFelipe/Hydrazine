@@ -85,7 +85,7 @@ export const Fonts = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 2,
     fontSize: 24,
-  }
+  },
   bracket: {
     color: '#32cd32',
     fontSize: 45,
