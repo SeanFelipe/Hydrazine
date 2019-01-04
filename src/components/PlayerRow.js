@@ -28,7 +28,6 @@ export class PlayerRow extends React.Component {
     this.bracketAnim()
   }
 
-
   selectPlayer() {
     this.props.dispatch(setSelectedPlayer(this.props.record.player.name))
   }

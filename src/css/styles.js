@@ -86,59 +86,25 @@ export const Styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    //borderWidth: 4,
-    //borderColor: '#accaf9',
   },
   scorersScrollView: {
     flex: 1,
     marginTop: 20,
-    //maxHeight: '50%',
-    //maxWidth: '50%',
   },
- playerRowContainer: {
-    flex: 1,
+  playerRowContainer: {
+    //flex: 1,
   },
   playerNameRowContainer: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
+    //flex: 1,
+    //flexDirection: "row",
+    //alignItems: "center",
   },
   playerDataContainer: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
+    //flex: 1,
+    //flexDirection: "column",
+    //alignItems: "center",
   },
 })
-
-export const StudentInfoStyles = StyleSheet.create({
-  players: {
-    borderColor: '#ee0000',
-    backgroundColor:'#778899',
-    alignItems:'center',
-    justifyContent:'center',
-  },
-
-  textViewContainer: {
-    flex: 3,
-    alignItems:'center',
-    justifyContent:'center',
-    margin: 3,
-  },
-
-  textViewText: {
-    color: '#FFFFFF',
-    fontSize: 20,
-  },
-
-  goButton: {
-    flex: 1,
-    marginTop: 3,
-    marginRight: 4,
-    backgroundColor: '#dddddd',
-    borderRadius: 4,
-  },
-})
-
 
 export const MatchStudentStyles = StyleSheet.create({
   container: {

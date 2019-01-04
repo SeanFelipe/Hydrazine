@@ -27,19 +27,16 @@ export const Fonts = StyleSheet.create({
     fontSize: 50,
     color:'#ddeedd',
   },
-    players: {
+  players: {
     flex: 1,
-     fontFamily: `${getFontRef('patrick')}`,
-     //fontFamily: "Lato-Medium",
-    //color:'#ee9999',
+    fontFamily: `${getFontRef('patrick')}`,
     color:'#ddeedd',
     fontSize: 35,
-    marginTop: 6,
-    marginBottom: 6,
+    //marginTop: 6,
+    //marginBottom: 6,
   },
   playerDetails: {
-    fontFamily: "System",
-    //fontFamily: "Lato",
+    fontFamily: `${getFontRef('patrick')}`,
     color:'#ddeedd',
     fontSize: 18,
   },
@@ -66,9 +63,9 @@ export const Fonts = StyleSheet.create({
     fontSize: 45,
     marginTop: 3,
   },
-     menuText: {
+  menuText: {
     fontFamily: `${getFontRef('patrick')}`,
-     //fontFamily: "Lato-Medium",
+    //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#cfccbb',
     fontSize: 35,
