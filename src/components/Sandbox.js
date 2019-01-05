@@ -9,7 +9,10 @@ import {
   Easing,
 } from 'react-native'
 
-import { Expr, Fonts } from '../css/styles'
+import { Expr } from '../css/styles'
+import { SandboxStyles } from '../css/fonts'
+
+import { getFlagSvgPath } from '../utils/flagHelper'
 
 
 export class Sandbox extends React.Component {
@@ -22,10 +25,13 @@ export class Sandbox extends React.Component {
   }
 
   render() {
+
+    console.log("flag path for Liberia: " + getFlagSvgPath('Liberia'))
+
     return (
       <View>
         <View style={Expr.main}>
-          <Text style={Fonts.luckiest}>Box One</Text>
+          <Text style={SandboxStyles.luckiest}>Box One</Text>
         </View>
       </View>
     )
