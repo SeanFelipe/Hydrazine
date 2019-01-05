@@ -20,6 +20,13 @@ const getFontRef = (tag) => {
 }
 
 
+export const SandboxStyles = StyleSheet.create({
+  luckiest: {
+    fontFamily: `${getFontRef('luckiest')}`,
+    fontSize: 50,
+    color:'#ddeedd',
+  }
+})
 
 export const Fonts = StyleSheet.create({
   topScorersTitleText: {

@@ -69,8 +69,6 @@ export const Expr = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: '#003300',
   },
   boxy: {
     flex: 1,
