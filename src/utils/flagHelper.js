@@ -13,11 +13,14 @@
   'gb.svg',
   'lk.svg',
 
+  removed for size:
+  rs
+  me
+
 */
 
 export const getFlagSvgPath = (country) => {
-  console.log("GFSP() with country: " + country)
-  return flagMap[country]
+  return `http://localhost:9009/${flagMap[country]}`
 }
 
 const flagMap = {

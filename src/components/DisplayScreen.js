@@ -28,7 +28,7 @@ class DisplayScreen extends React.Component {
           </View>
         </View>
         <View style={{ marginTop: 30 }}>
-          <ConnectedBackButton />jlk
+          <ConnectedBackButton />
         </View>
       </View>
      )

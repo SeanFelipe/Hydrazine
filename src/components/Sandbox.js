@@ -4,6 +4,7 @@ import {
   View,
   Text,
   Image,
+  ImageBackground,
   Animated,
   Dimensions,
   Easing,
@@ -25,20 +26,24 @@ export class Sandbox extends React.Component {
   }
 
   render() {
+    const flagPath = getFlagSvgPath('Mexico')
 
-    console.log("flag path for Liberia: " + getFlagSvgPath('Liberia'))
+    const widthRatio = 4.0 / 3.0
+    const flagHeight = 50
+    const flagWidth = flagHeight * widthRatio
 
     return (
       <View>
-        <View style={Expr.main}>
-          <Text style={SandboxStyles.luckiest}>Box One</Text>
-        </View>
+        <Image
+          style={{width: flagWidth, height: flagHeight}}
+          source={{ uri: flagPath }}
+        />
       </View>
     )
   }
 }
 
-  /*
+/*
 
 export class Sandbox extends React.Component {
   constructor(props) {
@@ -143,4 +148,4 @@ export class Sandbox extends React.Component {
     )
   }
 }
-  */
+*/

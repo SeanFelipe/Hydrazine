@@ -40,6 +40,9 @@ export const Styles = StyleSheet.create({
   playerDetailsContainer: {
     alignSelf: "center",
   },
+  playerNameAndNationality: {
+    flexDirection: "row"
+  },
 })
 
 export const Expr = {

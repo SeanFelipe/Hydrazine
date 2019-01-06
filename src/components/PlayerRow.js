@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Animated, Button, View, ScrollView, Text, TextInput } from 'react-native'
+import { Animated, Button, View, ScrollView, Text, TextInput, Image } from 'react-native'
 
 import { getSelectedPlayer, setSelectedPlayer } from './../store/actions/actions';
 
 import { Alpha, Styles, Expr } from '../css/styles'
 import { Fonts } from '../css/fonts'
+import { getFlagSvgPath } from '../utils/flagHelper'
 
 
 export class PlayerRow extends React.Component {
@@ -17,6 +18,7 @@ export class PlayerRow extends React.Component {
       }
 
     this.renderPlayerData = this.renderPlayerData.bind(this)
+    this.renderFlag = this.renderFlag.bind(this)
     this.selectPlayer = this.selectPlayer.bind(this)
     this.determineShowBrackets = this.determineShowBrackets.bind(this)
     this.bracketAnim = this.bracketAnim.bind(this)
@@ -32,13 +34,33 @@ export class PlayerRow extends React.Component {
     this.props.dispatch(setSelectedPlayer(this.props.record.player.name))
   }
 
+  renderFlag(country) {
+    console.log("renderFlag with country: " + country)
+    const flagPath = getFlagSvgPath(country)
+    const widthRatio = 4.0 / 3.0
+    const flagHeight = 50
+    const flagWidth = flagHeight * widthRatio
+
+    return (
+      <View>
+        <Image
+          style={{width: flagWidth, height: flagHeight}}
+          source={{ uri: flagPath }}
+        />
+      </View>
+    )
+  }
+
   renderPlayerData() {
     const infos = this.props.record.player
     const numGoals = this.props.record.numberOfGoals
 
     return (
       <View style={Styles.playerDetailsContainer}>
-        <Text style={Fonts.playerDetails}>Nationality: { infos.nationality }</Text>
+        <View style={Styles.playerNameAndNationality}>
+          <Text style={Fonts.playerDetails}>Nationality: { infos.nationality }</Text>
+          { this.renderFlag(infos.nationality) }
+        </View>
         <Text style={Fonts.playerDetails}>Shirt Number: { infos.shirtNumber }</Text>
         <Text style={Fonts.playerDetails}>Goals: { numGoals }</Text>
         <Text style={Fonts.playerDetails}>Birth date: { infos.dateOfBirth }</Text>
