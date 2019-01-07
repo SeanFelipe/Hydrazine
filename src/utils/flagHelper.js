@@ -20,7 +20,7 @@
 */
 
 export const getFlagSvgPath = (country) => {
-  return `http://localhost:9009/${flagMap[country]}`
+  return `http://alsi.app/flagImages/${flagMap[country]}`
 }
 
 const flagMap = {

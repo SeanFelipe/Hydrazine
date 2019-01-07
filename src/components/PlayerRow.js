@@ -38,13 +38,13 @@ export class PlayerRow extends React.Component {
     console.log("renderFlag with country: " + country)
     const flagPath = getFlagSvgPath(country)
     const widthRatio = 4.0 / 3.0
-    const flagHeight = 50
+    const flagHeight = 20
     const flagWidth = flagHeight * widthRatio
 
     return (
       <View>
         <Image
-          style={{width: flagWidth, height: flagHeight}}
+          style={{width: flagWidth, height: flagHeight, marginLeft: 7, opacity: 0.8}}
           source={{ uri: flagPath }}
         />
       </View>

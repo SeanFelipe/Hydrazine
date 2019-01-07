@@ -9,6 +9,10 @@ import { ConnectedBackButton } from './BackButton'
 import { Styles, About } from '../css/styles'
 import { Fonts } from '../css/fonts'
 
+
+const NUM_PLAYERS_TO_DISPLAY = 10
+
+
 class DisplayScreen extends React.Component {
   render() {
 
@@ -20,7 +24,7 @@ class DisplayScreen extends React.Component {
           <Text style={Fonts.topScorersTitleText}>Top Scorers:</Text>
           <View style={Styles.scrollViewContainer}>
             <ScrollView>
-              { Array(5).fill().map((_, i) => {
+              { Array(NUM_PLAYERS_TO_DISPLAY).fill().map((_, i) => {
                   return <ConnectedPlayerRow key={i} playerRowIndex={i} record={scorers[i]}/>
                 })
               }

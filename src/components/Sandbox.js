@@ -15,6 +15,21 @@ import { SandboxStyles } from '../css/fonts'
 
 import { getFlagSvgPath } from '../utils/flagHelper'
 
+const renderFlag = (country) => {
+    const flagPath = getFlagSvgPath('Mexico')
+    const widthRatio = 4.0 / 3.0
+    const flagHeight = 50
+    const flagWidth = flagHeight * widthRatio
+
+    return (
+      <View>
+        <Image
+          style={{width: flagWidth, height: flagHeight}}
+          source={{ uri: flagPath }}
+        />
+      </View>
+    )
+}
 
 export class Sandbox extends React.Component {
   constructor(props) {
