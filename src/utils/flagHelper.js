@@ -19,8 +19,10 @@
 
 */
 
+const FLAG_SERVER_HOST = 'https://futbol.alsi.app'
+
 export const getFlagSvgPath = (country) => {
-  return `http://alsi.app/flagImages/${flagMap[country]}`
+  return `${FLAG_SERVER_HOST}/flagImages/${flagMap[country]}`
 }
 
 const flagMap = {
