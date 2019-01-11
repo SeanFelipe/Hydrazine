@@ -10,3 +10,13 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'patrickhandsc';
+         url('../fonts/patrickhandsc-webfont.woff2') format('woff2'),
+         url('../fonts/patrickhandsc-webfont.woff') format('woff'),
+         url('../fonts/patrickhandsc-webfont.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+
+}
