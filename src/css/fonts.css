@@ -1,22 +1,10 @@
 @font-face {
-    font-family: 'luckiestguy';
-    src: url('../fonts/luckiestguy-webfont.eot');
-    src: url('../fonts/luckiestguy-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/luckiestguy-webfont.woff2') format('woff2'),
-         url('../fonts/luckiestguy-webfont.woff') format('woff'),
-         url('../fonts/luckiestguy-webfont.ttf') format('truetype'),
-         url('../fonts/luckiestguy-webfont.svg#luckiest_guyregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+    font-family: 'Luckiest Guy';
+    src: url('../fonts/luckiestguy-webfont.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'patrickhandsc';
-         url('../fonts/patrickhandsc-webfont.woff2') format('woff2'),
+    font-family: 'Patrick Hand SC';
+    src: url('../fonts/patrickhandsc-webfont.woff2') format('woff2'),
          url('../fonts/patrickhandsc-webfont.woff') format('woff'),
-         url('../fonts/patrickhandsc-webfont.ttf') format('truetype'),
-    font-weight: normal;
-    font-style: normal;
-
 }
