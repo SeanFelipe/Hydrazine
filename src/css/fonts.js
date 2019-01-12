@@ -22,11 +22,12 @@ const getFontRef = (tag) => {
 
 export const SandboxStyles = StyleSheet.create({
   luckiest: {
-    fontFamily: `${getFontRef('luckiest')}`,
+    fontFamily: 'Patrick Hand SC',
     fontSize: 50,
     color:'#ddeedd',
   }
 })
+
 
 export const Fonts = StyleSheet.create({
   topScorersTitleText: {
