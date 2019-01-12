@@ -40,6 +40,8 @@
 		A9E7D10B3E654DB097DE2FF4 /* luckiestguy-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = FDD15C0E3AA3414B9B929440 /* luckiestguy-webfont.woff */; };
 		4C3EE295BB2541019E059A54 /* luckiestguy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD3270B2FCF5477BAA3837E1 /* luckiestguy.ttf */; };
 		DD7EC102FA9E45E49A73D0BD /* patrickhandsc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1BECC2CD36C418D84FC8B63 /* patrickhandsc.ttf */; };
+		A4EA823B4EBF4487B0CB3237 /* patrickhandsc-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 09199EAE29C5465296BA7EF1 /* patrickhandsc-webfont.woff */; };
+		70A4790794A0412D8C36C62D /* patrickhandsc-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CFE864CC24FD0BD5D5EEA /* patrickhandsc-webfont.woff2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +350,8 @@
 		FDD15C0E3AA3414B9B929440 /* luckiestguy-webfont.woff */ = {isa = PBXFileReference; name = "luckiestguy-webfont.woff"; path = "../assets/fonts/luckiestguy-webfont.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DD3270B2FCF5477BAA3837E1 /* luckiestguy.ttf */ = {isa = PBXFileReference; name = "luckiestguy.ttf"; path = "../assets/fonts/luckiestguy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F1BECC2CD36C418D84FC8B63 /* patrickhandsc.ttf */ = {isa = PBXFileReference; name = "patrickhandsc.ttf"; path = "../assets/fonts/patrickhandsc.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09199EAE29C5465296BA7EF1 /* patrickhandsc-webfont.woff */ = {isa = PBXFileReference; name = "patrickhandsc-webfont.woff"; path = "../assets/fonts/patrickhandsc-webfont.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E1CFE864CC24FD0BD5D5EEA /* patrickhandsc-webfont.woff2 */ = {isa = PBXFileReference; name = "patrickhandsc-webfont.woff2"; path = "../assets/fonts/patrickhandsc-webfont.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -615,6 +619,8 @@
 				FDD15C0E3AA3414B9B929440 /* luckiestguy-webfont.woff */,
 				DD3270B2FCF5477BAA3837E1 /* luckiestguy.ttf */,
 				F1BECC2CD36C418D84FC8B63 /* patrickhandsc.ttf */,
+				09199EAE29C5465296BA7EF1 /* patrickhandsc-webfont.woff */,
+				4E1CFE864CC24FD0BD5D5EEA /* patrickhandsc-webfont.woff2 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1069,6 +1075,8 @@
 				A9E7D10B3E654DB097DE2FF4 /* luckiestguy-webfont.woff in Resources */,
 				4C3EE295BB2541019E059A54 /* luckiestguy.ttf in Resources */,
 				DD7EC102FA9E45E49A73D0BD /* patrickhandsc.ttf in Resources */,
+				A4EA823B4EBF4487B0CB3237 /* patrickhandsc-webfont.woff in Resources */,
+				70A4790794A0412D8C36C62D /* patrickhandsc-webfont.woff2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
