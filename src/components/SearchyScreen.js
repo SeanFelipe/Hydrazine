@@ -24,28 +24,35 @@ class SearchyScreen extends React.Component {
     super(props)
 
     this.state = {
-      //searchFieldText: 'enter player name',
-      searchFieldText: 'Ricardo',
+      searchFieldText: 'enter player name',
+      //searchFieldText: 'Ricardo',
       searchResults: null,
+      noResults: false,
     }
 
     this.runQuery = this.runQuery.bind(this)
-    this.renderSearch = this.renderSearch.bind(this)
+    this.renderSearchPre = this.renderSearchPre.bind(this)
     this.renderResults = this.renderResults.bind(this)
-  }
-
-  componentDidMount() {
-    this.runQuery()
   }
 
   runQuery() {
     getPlayerApiId(this.state.searchFieldText)
-      .then((records) => {
-        this.setState({ searchResults: records })
+      .then((response) => {
+        if ( response.searchResult.length != 0 ) {
+          this.setState({
+            noResults: false,
+            searchResults: response.searchResult
+          })
+        } else {
+          this.setState({
+            noResults: true,
+            searchResults: null
+          })
+        }
       })
   }
 
-  renderSearch() {
+  renderSearchPre() {
     return (
      <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
        <TextInput
@@ -53,6 +60,11 @@ class SearchyScreen extends React.Component {
         placeholder={this.state.searchFieldText}
         onChangeText={(text) => this.setState({ searchFieldText: text })}
        />
+       { this.state.noResults
+         ? <Text>No search results found.</Text>
+         : null
+        }
+
        <Text style={Fonts.backButton} onPress={this.runQuery}>Run Query</Text>
      </View>
     )
@@ -60,29 +72,31 @@ class SearchyScreen extends React.Component {
 
   renderResults() {
     return (
-     <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
-         <ApiIdRow name='foo' firstName='bar' apiId='42' />
-     </View>
+      <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
+        {
+          this.state.searchResults.map((record, index) => {
+            return <ApiIdRow key={index} datums={record} />
+          })
+        }
+      </View>
     )
   }
 
   render() {
 
     /*
-          <ConnectedBackButton />
-          */
+      <ConnectedBackButton />
+      */
 
-    console.log("render() with searchResults: " + this.state.searchResults)
-
-   return (
-     <View style={{}}>
-       <Text style={Fonts.topScorersTitleText}>Searchy Screen</Text>
-       { this.state.searchResults
-         ? this.renderResults()
-         : this.renderSearch()
-       }
+    return (
+      <View style={{}}>
+        <Text style={Fonts.topScorersTitleText}>Searchy Screen</Text>
+        { this.state.searchResults
+          ? this.renderResults()
+          : this.renderSearchPre()
+        }
       </View>
-     )
+    )
   }
 }
 

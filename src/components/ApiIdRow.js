@@ -5,7 +5,7 @@ import {
   View,
   ScrollView,
   Text,
-  TextInput,
+  Image,
 } from 'react-native'
 
 
@@ -17,8 +17,10 @@ import { getFlagSvgPath } from '../utils/flagHelper'
 export class ApiIdRow extends React.Component {
   constructor(props) {
     super(props)
+      console.log("ApiIdRow constructor() with datums: " + JSON.stringify(this.props.datums))
+
       this.state = {
-        //pressed: false,
+       //pressed: false,
         //bracketOpacity: new Animated.Value(0),
       }
 
@@ -35,7 +37,7 @@ export class ApiIdRow extends React.Component {
   }
 
   sendPlayerDataRequest() {
-    console.log("sendPlayerDataRequest for: " + this.props.name)
+    console.log("sendPlayerDataRequest for: " + this.props.datums.name)
   }
 
   renderFlag(country) {
@@ -58,16 +60,31 @@ export class ApiIdRow extends React.Component {
 
    render() {
 
-    return (
-      <View style={Styles.playerRowContainer} >
-        <View style={Styles.playerNameRowContainer} >
-          <Text style={Fonts.players} onPress={this.sendPlayerDataRequest} >
-            { this.props.name } { this.props.firstName }
-          </Text>
-        </View>
-      </View>
-    )
-  }
+     const dms = this.props.datums
+     let renderLine = ""
+     if ( dms.firstName === dms.name ) {
+       renderLine = dms.name
+     } else {
+       renderLine = `${dms.firstName} ${dms.name}`
+     }
+
+     return (
+       <View style={Styles.playerRowContainer} >
+         <View style={{
+             flexDirection: 'row',
+           }}
+           onPress={this.sendPlayerDataRequest}
+         >
+
+           <Text style={Fonts.players}>{ renderLine }</Text>
+
+           <View>
+             { this.renderFlag(this.props.datums.nationality) }
+           </View>
+         </View>
+       </View>
+     )
+   }
 }
 
 
@@ -138,7 +155,7 @@ export class ApiIdRow extends React.Component {
     const showBrackets = this.determineShowBrackets()
     const selected = this.props.record.player.name === this.props.selectedPlayer ? true : false
 
-    //console.log("playerData render() selected: " + selected)
+//console.log(" render() selected: " + selected)
 
 
 export const ConnectedPlayerRow = connect((store) => ({
