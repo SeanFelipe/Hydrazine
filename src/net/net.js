@@ -38,15 +38,12 @@ export function getPlayerApiId(textQuery) {
 
   const opts = {
     method: 'GET',
-    //mode: 'no-cors',
     headers: {
-      //'X-Auth-Token': 'b517a09f84124dd08ed8a3f4f851e345',
-      'Content-Type': 'application/json',
     }
   }
 
-  //const url = `${APIID_SEARCH}/${textQuery}`
-  const url = `${APIID_SEARCH_SERVER}/experiment`
+  const url = `${APIID_SEARCH}/${textQuery}`
+  //const url = `${APIID_SEARCH_SERVER}/experiment`
   //const url = `${APIID_SEARCH_SERVER}/studentList`
 
   return fetch(url, opts)

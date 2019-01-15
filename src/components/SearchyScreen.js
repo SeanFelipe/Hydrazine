@@ -9,8 +9,9 @@ import {
 } from 'react-native'
 
 import * as appActions from './../store/actions/actions';
-import { ConnectedPlayerRow } from './PlayerRow'
+//import { ConnectedPlayerRow } from './PlayerRow'
 import { ConnectedBackButton } from './BackButton'
+import { ApiIdRow } from './ApiIdRow'
 
 import { getPlayerApiId } from '../net/net'
 
@@ -25,17 +26,44 @@ class SearchyScreen extends React.Component {
     this.state = {
       //searchFieldText: 'enter player name',
       searchFieldText: 'Ricardo',
+      searchResults: null,
     }
 
     this.runQuery = this.runQuery.bind(this)
+    this.renderSearch = this.renderSearch.bind(this)
+    this.renderResults = this.renderResults.bind(this)
   }
 
   componentDidMount() {
-    getPlayerApiId(this.state.searchFieldText)
+    this.runQuery()
   }
 
   runQuery() {
     getPlayerApiId(this.state.searchFieldText)
+      .then((records) => {
+        this.setState({ searchResults: records })
+      })
+  }
+
+  renderSearch() {
+    return (
+     <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
+       <TextInput
+        style={ Fonts.backButton }
+        placeholder={this.state.searchFieldText}
+        onChangeText={(text) => this.setState({ searchFieldText: text })}
+       />
+       <Text style={Fonts.backButton} onPress={this.runQuery}>Run Query</Text>
+     </View>
+    )
+  }
+
+  renderResults() {
+    return (
+     <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
+         <ApiIdRow name='foo' firstName='bar' apiId='42' />
+     </View>
+    )
   }
 
   render() {
@@ -44,19 +72,15 @@ class SearchyScreen extends React.Component {
           <ConnectedBackButton />
           */
 
+    console.log("render() with searchResults: " + this.state.searchResults)
 
    return (
      <View style={{}}>
        <Text style={Fonts.topScorersTitleText}>Searchy Screen</Text>
-       <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
-         <TextInput
-          style={ Fonts.backButton }
-          placeholder={this.state.searchFieldText}
-          onChangeText={(text) => this.setState({ searchFieldText: text })}
-         />
-         <Text style={Fonts.backButton} onPress={this.runQuery}>Run Query</Text>
-
-        </View>
+       { this.state.searchResults
+         ? this.renderResults()
+         : this.renderSearch()
+       }
       </View>
      )
   }
