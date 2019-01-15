@@ -6,6 +6,7 @@ import * as appActions from './../store/actions/actions';
 import { ConnectedDisplayScreen } from './DisplayScreen'
 import { ConnectedSplashScreen } from './SplashScreen'
 import { ConnectedAboutScreen } from './AboutScreen'
+import { ConnectedSearchyScreen } from './SearchyScreen'
 import { Sandbox } from './Sandbox'
 
 import { Styles } from '../css/styles'
@@ -25,9 +26,9 @@ class Alpha extends React.Component {
 
   componentDidMount() {
     Platform.OS === 'web' ? this.loadFontsForRNWeb() : null
-    this.props.dispatch(appActions.handleInitialLoad())
+    //this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.handleInitialLoad('Display'))
-    //this.props.dispatch(appActions.setInitialScreen('Sandbox'))
+    this.props.dispatch(appActions.setInitialScreen('Searchy'))
   }
 
   loadFontsForRNWeb() {
@@ -69,6 +70,8 @@ class Alpha extends React.Component {
         return <Sandbox />
       case 'About':
         return <ConnectedAboutScreen />
+      case 'Searchy':
+        return <ConnectedSearchyScreen />
       default:
         return <Text>No screen selected.</Text>
     }
