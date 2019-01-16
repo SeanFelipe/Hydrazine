@@ -1,6 +1,8 @@
 const Promise = require('bluebird')
 
 
+////////////////////////
+// football-data.org
 const REMOTE = 'https://api.football-data.org'
 const futbolHost = REMOTE
 const INITIAL_URL = `${futbolHost}/v2/competitions/`
@@ -10,7 +12,11 @@ const CHAMPIONS_LEAGUE = `${futbolHost}/v2/competitions/CL/matches`
 const TOP_SCORERS = `${futbolHost}/v2/competitions/${LEAGUE}/scorers`
 const DATA_TARGET = TOP_SCORERS
 
-const APIID_SEARCH_SERVER = 'http://localhost:9292'
+
+////////////////////////
+// search
+//const APIID_SEARCH_SERVER = 'http://localhost:9292'
+const APIID_SEARCH_SERVER = 'http://searchy-server.herokuapp.com'
 const APIID_SEARCH_ENDPOINT = '/getPlayerApiId'
 const APIID_SEARCH = `${APIID_SEARCH_SERVER}${APIID_SEARCH_ENDPOINT}`
 

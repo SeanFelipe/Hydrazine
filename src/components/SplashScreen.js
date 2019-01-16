@@ -41,6 +41,7 @@ class SplashScreen extends React.Component {
       opacityIe: new Animated.Value(0),
       opacityNt: new Animated.Value(0),
       opacityTopScorers: new Animated.Value(0),
+      opacitySearch: new Animated.Value(0),
       opacityAbout: new Animated.Value(0),
     }
 
@@ -52,6 +53,7 @@ class SplashScreen extends React.Component {
     this.startPulsingAnim = this.startPulsingAnim.bind(this)
 
     this.triggerDisplayScreen = this.triggerDisplayScreen.bind(this)
+    this.triggerSearchScreen = this.triggerSearchScreen.bind(this)
     this.triggerAboutScreen = this.triggerAboutScreen.bind(this)
   }
 
@@ -63,9 +65,11 @@ class SplashScreen extends React.Component {
     this.startTextAnim(this.state.opacityIe, 1400)
     this.startTextAnim(this.state.opacityNt, 1500)
     this.startFadeIn(this.state.opacityTopScorers, 2000)
-    this.startFadeIn(this.state.opacityAbout, 2500)
-    setInterval(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 4000)
-    setInterval(() => { this.startPulsingAnim(this.state.opacityAbout) }, 4750)
+    this.startFadeIn(this.state.opacitySearch, 2500)
+    this.startFadeIn(this.state.opacityAbout, 3000)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityTopScorers) }, 6000)
+    setInterval(() => { this.startPulsingAnim(this.state.opacitySearch) }, 5000)
+    setInterval(() => { this.startPulsingAnim(this.state.opacityAbout) }, 4000)
   }
 
 
@@ -79,14 +83,22 @@ class SplashScreen extends React.Component {
   }
 
   triggerDisplayScreen() {
-    console.log("TDS()")
     this.startFadeOut(this.state.opacityTop, this.changeScreenFadeOutDuration)
     setTimeout(() => { this.props.dispatch(changeScreen('Display')) }, this.changeScreenFadeOutDuration)
   }
 
-  triggerAboutScreen() {
-    this.props.dispatch(changeScreen('About'))
+  triggerSearchScreen() {
+    console.log("triggerSearchScreen()")
+    this.startFadeOut(this.state.opacityTop, this.changeScreenFadeOutDuration)
+    setTimeout(() => { this.props.dispatch(changeScreen('Search')) }, this.changeScreenFadeOutDuration)
   }
+
+  triggerAboutScreen() {
+    this.startFadeOut(this.state.opacityTop, this.changeScreenFadeOutDuration)
+    setTimeout(() => { this.props.dispatch(changeScreen('About')) }, this.changeScreenFadeOutDuration)
+  }
+
+
 
   futbolAnim() {
     Animated.timing(
@@ -194,6 +206,14 @@ class SplashScreen extends React.Component {
                 onPress={this.triggerDisplayScreen}
               >
                 Top Scorers
+              </Text>
+            </Animated.View>
+            <Animated.View style={{opacity: this.state.opacitySearch}}>
+              <Text
+                style={Fonts.menuText}
+                onPress={this.triggerSearchScreen}
+              >
+                Search Names
               </Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityAbout}}>

@@ -19,12 +19,12 @@ import { Styles, About } from '../css/styles'
 import { Fonts } from '../css/fonts'
 
 
-class SearchyScreen extends React.Component {
+export class SearchyScreen extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      searchFieldText: 'enter player name',
+      searchFieldText: 'enter name',
       //searchFieldText: 'Ricardo',
       searchResults: null,
       noResults: false,
@@ -60,12 +60,20 @@ class SearchyScreen extends React.Component {
         placeholder={this.state.searchFieldText}
         onChangeText={(text) => this.setState({ searchFieldText: text })}
        />
+
        { this.state.noResults
          ? <Text>No search results found.</Text>
          : null
         }
 
-       <Text style={Fonts.backButton} onPress={this.runQuery}>Run Query</Text>
+        <Text
+          style={
+            Fonts.backButton
+          }
+          onPress={this.runQuery}
+        >
+          Run Query
+        </Text>
      </View>
     )
   }
@@ -90,17 +98,16 @@ class SearchyScreen extends React.Component {
 
     return (
       <View style={{}}>
-        <Text style={Fonts.topScorersTitleText}>Searchy Screen</Text>
+        <Text style={Fonts.topScorersTitleText}>Player Search</Text>
         { this.state.searchResults
           ? this.renderResults()
           : this.renderSearchPre()
         }
+
+        <View style={{ marginTop: 50 }}>
+          <ConnectedBackButton />
+        </View>
       </View>
     )
   }
 }
-
-export const ConnectedSearchyScreen = connect((store) => ({
-  initialData: store.app.initialData,
-  dispatch: store.dispatch,
-}))(SearchyScreen)
