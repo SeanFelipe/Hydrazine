@@ -1,4 +1,4 @@
-package com.futboldata;
+package com.futboldataclient;
 
 import android.app.Application;
 
