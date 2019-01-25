@@ -26,9 +26,10 @@ class Alpha extends React.Component {
 
   componentDidMount() {
     Platform.OS === 'web' ? this.loadFontsForRNWeb() : null
-    this.props.dispatch(appActions.handleInitialLoad())
+    //this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.handleInitialLoad('Display'))
-    //this.props.dispatch(appActions.setInitialScreen('Searchy'))
+    this.props.dispatch(appActions.setInitialScreen('Search'))
+    //this.props.dispatch(appActions.setInitialScreen('Sandbox'))
   }
 
   loadFontsForRNWeb() {

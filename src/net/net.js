@@ -16,7 +16,7 @@ const DATA_TARGET = TOP_SCORERS
 ////////////////////////
 // search
 //const APIID_SEARCH_SERVER = 'http://localhost:9292'
-const APIID_SEARCH_SERVER = 'http://searchy-server.herokuapp.com'
+const APIID_SEARCH_SERVER = 'https://searchy.alsi.app'
 const APIID_SEARCH_ENDPOINT = '/getPlayerApiId'
 const APIID_SEARCH = `${APIID_SEARCH_SERVER}${APIID_SEARCH_ENDPOINT}`
 

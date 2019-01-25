@@ -80,6 +80,7 @@ export const Expr = {
 }
 
 export const About = {
+  /*
   backButtonContainer: {
     alignItems: 'center',
     borderWidth: 3,
@@ -88,5 +89,63 @@ export const About = {
     marginLeft: '40%',
     marginRight: '40%',
     marginBottom: 20,
+  },
+  */
+  backButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'fixed',
+    top: 10,
+    left: 10,
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: '#cfccbb',
+    paddingLeft: 4,
+    paddingRight: 4,
+  },
+  searchRun: {
+    alignItems: 'center',
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: '#cfccbb',
+    marginLeft: '25%',
+    marginRight: '25%',
+    marginTop: 40,
+    paddingRight: 4,
+    paddingLeft: 4,
+  },
+}
+
+export const SearchStyles = {
+  main: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  row1of3: {
+    backgroundColor: "0x0000ff",
+    //borderWidth: 3,
+    flex: 1
+  },
+  blueBox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'fixed',
+    width: 100,
+    height: 50,
+    top: 10,
+    left: 10,
+    backgroundColor: 'powderblue',
+  },
+  backButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'fixed',
+    top: 10,
+    left: 10,
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: '#cfccbb',
+    padding: 8,
   },
 }

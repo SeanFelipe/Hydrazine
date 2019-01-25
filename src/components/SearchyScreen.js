@@ -15,7 +15,7 @@ import { ApiIdRow } from './ApiIdRow'
 
 import { getPlayerApiId } from '../net/net'
 
-import { Styles, About } from '../css/styles'
+import { Styles, About, SearchStyles } from '../css/styles'
 import { Fonts } from '../css/fonts'
 
 
@@ -52,28 +52,37 @@ export class SearchyScreen extends React.Component {
       })
   }
 
+
   renderSearchPre() {
     return (
-     <View style={{ marginTop: 30, flex: 1, alignItems: 'center' }}>
-       <TextInput
-        style={ Fonts.backButton }
-        placeholder={this.state.searchFieldText}
-        onChangeText={(text) => this.setState({ searchFieldText: text })}
-       />
+      <View style={
+        { marginTop: 30, flex: 1, alignItems: 'center' }
+      }>
+        <TextInput
+          style={ Fonts.backButton }
+          placeholder={this.state.searchFieldText}
+          onChangeText={(text) => this.setState({ searchFieldText: text })}
+        />
 
-       { this.state.noResults
+        { this.state.noResults
          ? <Text>No search results found.</Text>
          : null
         }
 
-        <Text
-          style={
+        <View
+        style={
+            About.searchRun
+          }
+        >
+      <Text
+        style={
             Fonts.backButton
           }
           onPress={this.runQuery}
         >
           Run Query
         </Text>
+     </View>
      </View>
     )
   }
@@ -92,21 +101,15 @@ export class SearchyScreen extends React.Component {
 
   render() {
 
-    /*
-      <ConnectedBackButton />
-      */
-
     return (
-      <View style={{}}>
+      <View>
+        <ConnectedBackButton />
         <Text style={Fonts.topScorersTitleText}>Player Search</Text>
         { this.state.searchResults
           ? this.renderResults()
           : this.renderSearchPre()
         }
 
-        <View style={{ marginTop: 50 }}>
-          <ConnectedBackButton />
-        </View>
       </View>
     )
   }
