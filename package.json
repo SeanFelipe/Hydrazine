@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "test": "jest"
+    "spec": "node node_modules/.bin/wdio ./spec/support/wdio.conf.js"
   },
   "dependencies": {
     "file-loader": "^2.0.0",
@@ -33,7 +33,11 @@
     "react-hot-loader": "^4.3.11",
     "react-test-renderer": "16.6.1",
     "webpack": "^4.20.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "@wdio/cli": "^5.18.0",
+    "@wdio/jasmine-framework": "^5.16.15",
+    "@wdio/selenium-standalone-service": "^5.2.2",
+    "@wdio/local-runner": "^5.18.0"
   },
   "jest": {
     "preset": "react-native"
