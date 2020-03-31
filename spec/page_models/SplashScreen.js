@@ -11,9 +11,9 @@ class SplashScreen extends Page {
     /**
      * define or overwrite page methods
      */
-    open () {
-        super.open('')       //this will append `contact-us` to the baseUrl to form complete URL
-        browser.pause(2000);
+    open() {
+        super.open('/')
+        browser.pause(7000);
     }
 
     waitForContactPageToLoad () {

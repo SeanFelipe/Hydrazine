@@ -1,3 +1,4 @@
 #!/bin/bash -l
 title run-wdio
-yarn spec
+#yarn spec
+yarn phptravels

@@ -24,7 +24,7 @@ class SplashScreen extends React.Component {
     this.changeScreenFadeOutDuration = 1000
 
     const xfactor = 0.8
-    const yfactor = 0.4
+    const yfactor = 0.8
     this.scx = Dimensions.get('window').width
     this.scy = Dimensions.get('window').height
     this.sx = this.scx * xfactor
@@ -45,7 +45,6 @@ class SplashScreen extends React.Component {
       opacityAbout: new Animated.Value(0),
     }
 
-    this.soccerBall = this.soccerBall.bind(this)
     this.futbolAnim = this.futbolAnim.bind(this)
     this.startTextAnim = this.startTextAnim.bind(this)
     this.startFadeIn = this.startFadeIn.bind(this)
@@ -162,17 +161,6 @@ class SplashScreen extends React.Component {
       bottom: 120,
     }
 
-      /*
-    const dims = {
-      width: this.sx,
-      height: this.sy,
-    }
-    */
-    //console.log("dims: " + JSON.stringify(dims))
-
-    // animContainer needs dynamically made dimensions
-    //Object.assign(Expr.animContainer, dims)
-
 
     return (
       <Animated.View style={{ opacity: this.state.opacityTop }}>
@@ -181,6 +169,9 @@ class SplashScreen extends React.Component {
             <Animated.View style={ballStyle}>
               { this.soccerBall() }
             </Animated.View>
+          </View>
+          <View id="spec-id">
+            <Text>Spec ID View</Text>
           </View>
           <Animated.View style={introFontContainer}>
             <Animated.View style={{opacity: this.state.opacityFutbol}}>

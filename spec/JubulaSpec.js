@@ -1,15 +1,19 @@
-import { SplashScreen } from './page_models/splash_screen.page'
 import { Builder, By, Key, until } from 'selenium-webdriver'
+import SplashScreen from './page_models/SplashScreen'
 
-const driver = new Builder().forBrowser('chrome').build()
-const base = 'http://localhost:3000'
+//const driver = new Builder().forBrowser('chrome').build()
 
-describe("Splash Page", function() {
+describe("Splash Screen", function() {
   it("starts", async function() {
-    console.log("*************************************")
-    console.log("starting Splash Page test")
+    SplashScreen.open()
+    browser.pause(5000)
 
-    driver.findElement(By.id('soccer-ball'))
+    console.log("Splash Screen browser: " + JSON.stringify(browser))
+    console.log("Splash Screen driver: " + JSON.stringify(driver))
+
+    const elems = driver.findElement(By.xpath('//*'))
+    console.log("elems length: " + elems.length)
+    //driver.findElement(By.id('soccer-ball'))
 
   })
 })

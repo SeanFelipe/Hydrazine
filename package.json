@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "spec": "node node_modules/.bin/wdio ./spec/support/wdio.conf.js"
+    "spec": "node node_modules/.bin/wdio ./spec/support/wdio.conf.js",
+    "phptravels": "node node_modules/.bin/wdio ./spec/support/phptravels.conf.js"
   },
   "dependencies": {
     "file-loader": "^2.0.0",
