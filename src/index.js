@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, View, Text, StyleSheet } from 'react-native';
+import { Platform, View, Text, StyleSheet, ImageBackground } from 'react-native';
 import { utils, RuuiProvider, Button, Tooltip } from 'react-universal-ui';
 import { connect, Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
@@ -9,6 +9,7 @@ import { increaseCounter } from './store/actions/actions';
 import { ConnectedAlpha } from './components/Alpha.js';
 
 import { IndexStyles } from './css/styles'
+import S10 from '../assets/img/samsung-s10-25.png'
 
 
 type Props = {
@@ -24,19 +25,23 @@ type Props = {
 
 
 class App extends Component {
-	props: Props;
+  render() {
+    return (
+      <View style={ IndexStyles.main } >
+                <ImageBackground
+          style={{ width: 300, height: 650}}
+          source={S10}
+        >
+        <ConnectedAlpha />
+                        </ImageBackground>
 
-	render() {
-      return (
-        <View style={ IndexStyles.main } >
-          <ConnectedAlpha />
-        </View>
-      )
-	}
+      </View>
+    )
+  }
 
-	increaseCounter = () => {
-		this.props.dispatch(increaseCounter());
-	};
+  increaseCounter = () => {
+    this.props.dispatch(increaseCounter());
+  };
 }
 
 
