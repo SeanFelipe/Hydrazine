@@ -7,7 +7,6 @@ import { ConnectedDisplayScreen } from './DisplayScreen'
 import { ConnectedSplashScreen } from './SplashScreen'
 import { ConnectedAboutScreen } from './AboutScreen'
 import { SearchyScreen } from './SearchyScreen'
-import { Sandbox } from './Sandbox'
 
 import { Styles } from '../css/styles'
 
@@ -29,7 +28,6 @@ class Alpha extends React.Component {
     this.props.dispatch(appActions.handleInitialLoad())
     //this.props.dispatch(appActions.handleInitialLoad('Display'))
     //this.props.dispatch(appActions.setInitialScreen('Search'))
-    //this.props.dispatch(appActions.setInitialScreen('Sandbox'))
   }
 
   loadFontsForRNWeb() {
@@ -67,8 +65,6 @@ class Alpha extends React.Component {
         return <ConnectedDisplayScreen />
       case 'Team':
         return <ConnectedTeamScreen />
-      case 'Sandbox':
-        return <Sandbox />
       case 'About':
         return <ConnectedAboutScreen />
       case 'Search':

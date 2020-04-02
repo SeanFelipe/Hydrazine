@@ -10,6 +10,7 @@ import { ConnectedAlpha } from './components/Alpha.js';
 
 import S10 from '../assets/img/s10-1604.png'
 import onePlus from '../assets/img/oneplus-5t.png'
+import pixel3 from '../assets/img/pixel3-scaled-for-inner-resolution.png'
 
 
 type Props = {
@@ -30,13 +31,33 @@ class App extends Component {
 
     this.physicalPhoneHeight = 1604
     this.physicalPhoneWidth = 720
+
+
+    this.phonePng = pixel3
+    this.physicalPhoneHeight = 2318
+    this.physicalPhoneWidth = 1092
+    this.phoneResolutionWidth = 1080
+    this.phoneResolutionHeight = 2160
+    this.displayHeight = this.physicalPhoneHeight / 3 + 60
+    this.displayWidth = this.physicalPhoneWidth / 3 + 30
+    this.displayInnerResolutionHeight = this.phoneResolutionHeight / 3
+    this.displayInnerResolutionWidth = this.phoneResolutionWidth / 3
+    this.innerPadx = ( this.displayWidth - this.displayInnerResolutionWidth ) / 2
+    this.innerPady = ( this.displayHeight - this.displayInnerResolutionHeight ) / 2
+
+    /*
     this.phonePng = S10
     this.displayHeight = this.physicalPhoneHeight / 2
     this.displayWidth = this.physicalPhoneWidth / 2 + 20
+    */
 
-    //this.phonePng = onePlus
-    //this.displayHeight = 1356
-    //this.displayWidth = 664
+    /*
+    this.phonePng = onePlus
+    this.physicalPhoneHeight = 1356
+    this.physicalPhoneWidth = 664
+    this.displayHeight = this.physicalPhoneHeight / 2 + 60
+    this.displayWidth = this.physicalPhoneWidth / 2 + 30
+    */
 
     this.parentViewStyle = {
       flex: 1,
@@ -63,7 +84,21 @@ class App extends Component {
             style={{ width: this.displayWidth, height: this.displayHeight }}
             source={this.phonePng}
           >
-            <ConnectedAlpha />
+
+            <View style={{
+                borderWidth: 4,
+                height: this.displayInnerResolutionHeight,
+                width: this.displayInnerResolutionWidth,
+                left: this.innerPadx,
+                top: this.innerPady,
+              }}
+            >
+
+              <ConnectedAlpha />
+
+            </View>
+
+
           </ImageBackground>
 
         </View>
