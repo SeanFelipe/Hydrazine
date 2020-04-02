@@ -1,14 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-export const IndexStyles = StyleSheet.create({
-  main: {
-    flex: 1,
-    backgroundColor: '#34495e',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export const Styles = StyleSheet.create({
   flex: {
@@ -94,14 +85,12 @@ export const About = {
   backButtonContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'fixed',
-    top: 10,
-    left: 10,
     borderWidth: 3,
     borderRadius: 10,
     borderColor: '#cfccbb',
     paddingLeft: 4,
     paddingRight: 4,
+    marginBottom: 50,
   },
   searchRun: {
     alignItems: 'center',

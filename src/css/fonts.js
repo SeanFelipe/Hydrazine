@@ -32,13 +32,13 @@ export const SandboxStyles = StyleSheet.create({
 export const Fonts = StyleSheet.create({
   topScorersTitleText: {
     fontFamily: `${getFontRef('luckiest')}`,
-    fontSize: 50,
+    fontSize: 40,
     color:'#ddeedd',
   },
   players: {
     fontFamily: `${getFontRef('patrick')}`,
     color:'#ddeedd',
-    fontSize: 35,
+    fontSize: 30,
     //marginTop: 6,
     //marginBottom: 6,
   },
@@ -46,21 +46,21 @@ export const Fonts = StyleSheet.create({
     //fontFamily: `${getFontRef('patrick')}`,
     fontFamily: 'System',
     color:'#ddeedd',
-    fontSize: 18,
+    fontSize: 16,
   },
   introText: {
     fontFamily: `${getFontRef('luckiest')}`,
     //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#ddeedd',
-    fontSize: 28,
+    fontSize: 36,
     margin: 2,
   },
   cl: {
     fontFamily: `${getFontRef('luckiest')}`,
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 28,
+    fontSize: 36,
     marginTop: 3,
     marginLeft: 2,
   },
@@ -68,7 +68,7 @@ export const Fonts = StyleSheet.create({
     fontFamily: `${getFontRef('luckiest')}`,
     //fontFamily: "Lato-Medium",
     color:'#ddeedd',
-    fontSize: 28,
+    fontSize: 36,
     marginTop: 3,
   },
   menuText: {
@@ -76,7 +76,7 @@ export const Fonts = StyleSheet.create({
     //fontFamily: "Lato-Medium",
     //color:'#ee9999',
     color:'#cfccbb',
-    fontSize: 20,
+    fontSize: 30,
     margin: 2,
   },
   aboutScrollText: {
