@@ -12,7 +12,6 @@ import S10 from '../assets/img/s10-1604.png'
 import onePlus from '../assets/img/oneplus-5t.png'
 import pixel3 from '../assets/img/pixel3-scaled-for-inner-resolution.png'
 
-
 type Props = {
 	dispatch?: Function,
 };
@@ -32,7 +31,6 @@ class App extends Component {
     this.physicalPhoneHeight = 1604
     this.physicalPhoneWidth = 720
 
-
     this.phonePng = pixel3
     this.physicalPhoneHeight = 2318
     this.physicalPhoneWidth = 1092
@@ -44,6 +42,8 @@ class App extends Component {
     this.displayInnerResolutionWidth = this.phoneResolutionWidth / 3
     this.innerPadx = ( this.displayWidth - this.displayInnerResolutionWidth ) / 2
     this.innerPady = ( this.displayHeight - this.displayInnerResolutionHeight ) / 2
+
+    this.browser = Platform.OS === 'web' ? true : false
 
     /*
     this.phonePng = S10
@@ -71,37 +71,57 @@ class App extends Component {
       width: this.displayWidth,
       height: this.displayHeight,
     }
+
+    this.browserRender = this.browserRender.bind(this)
+    this.deviceRender = this.deviceRender.bind(this)
+
   }
 
-  render() {
 
-
+  browserRender() {
+    console.log("browserRender()")
     return (
-      <View style={ this.parentViewStyle } >
-        <View style={ this.phonePngStyle } >
+      <View style={ this.phonePngStyle } >
 
-          <ImageBackground
-            style={{ width: this.displayWidth, height: this.displayHeight }}
-            source={this.phonePng}
+        <ImageBackground
+          style={{ width: this.displayWidth, height: this.displayHeight }}
+          source={this.phonePng}
+        >
+
+          <View style={{
+              borderWidth: 4,
+              height: this.displayInnerResolutionHeight,
+              width: this.displayInnerResolutionWidth,
+              left: this.innerPadx,
+              top: this.innerPady,
+            }}
           >
 
-            <View style={{
-                borderWidth: 4,
-                height: this.displayInnerResolutionHeight,
-                width: this.displayInnerResolutionWidth,
-                left: this.innerPadx,
-                top: this.innerPady,
-              }}
-            >
+            <ConnectedAlpha />
 
-              <ConnectedAlpha />
+          </View>
+        </ImageBackground>
+      </View>
+    )
+  }
 
-            </View>
+  deviceRender() {
+    console.log("deviceRender()")
+    return (
+      <View>
+          <ConnectedAlpha />
+      </View>
+    )
+  }
 
 
-          </ImageBackground>
-
-        </View>
+  render() {
+    return (
+      <View style={ this.parentViewStyle } >
+        { this.browser
+          ? this.browserRender()
+          : this.deviceRender()
+        }
       </View>
     )
   }
