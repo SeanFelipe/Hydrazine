@@ -1,10 +1,6 @@
 import * as Actions from '../constants';
 import { initialDataCall } from '../../net/net'
 
-export function increaseCounter (volume = 1) {
-	return { type: Actions.IncreaseCounter, volume };
-}
-
 function setScreen(screen) {
   return {
     type: Actions.SET_SCREEN,
@@ -65,5 +61,3 @@ export function setSelectedPlayer (playerName) {
     dispatch(selectedPlayer(playerName))
   }
 }
-
-
