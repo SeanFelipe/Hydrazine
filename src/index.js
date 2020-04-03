@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { Platform, View, } from 'react-native';
 import { RuuiProvider } from 'react-universal-ui';
 import { connect, Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
@@ -14,22 +14,19 @@ import {
 } from './PhoneMockups.js'
 
 
-type Props = {
-	dispatch?: Function,
-};
-
-@connect(({ app }) => {
-  //console.log("in @connect method, app has properties: " + Object.keys(app))
-  return {
-    counter: app.counter,
-  };
-})
-
-
 class App extends Component {
   render() {
+
+    const topContainerStyle = {
+      flex: 1,
+      backgroundColor: '#34495e',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
+
     return (
-      <View style={ this.parentViewStyle } >
+      <View style={ topContainerStyle }>
         { Platform.OS === 'web'
           ? <Pixel3Mockup />
           : <ConnectedAlpha />

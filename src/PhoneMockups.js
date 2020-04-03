@@ -7,6 +7,7 @@ import S10 from '../assets/img/s10-1604.png'
 import onePlus from '../assets/img/oneplus-5t.png'
 import pixel3 from '../assets/img/pixel3-scaled-for-inner-resolution.png'
 
+
 const parentViewStyle = () => {
   return ({
       flex: 1,
@@ -66,28 +67,28 @@ export class Pixel3Mockup extends Component {
   }
 
   render() {
+
+    const containerStyle = {
+      borderWidth: 4,
+      height: this.displayInnerResolutionHeight,
+      width: this.displayInnerResolutionWidth,
+      left: this.innerPadx,
+      top: this.innerPady,
+    }
+
     return (
-      <View style={ parentViewStyle() } >
+      <View>
+        <ImageBackground
+          style={{ width: this.displayWidth, height: this.displayHeight }}
+          source={this.phonePng}
+        >
 
-          <ImageBackground
-            style={{ width: this.displayWidth, height: this.displayHeight }}
-            source={this.phonePng}
-          >
+          <View style={ containerStyle }>
+            <ConnectedAlpha />
+          </View>
 
-            <View style={{
-                borderWidth: 4,
-                height: this.displayInnerResolutionHeight,
-                width: this.displayInnerResolutionWidth,
-                left: this.innerPadx,
-                top: this.innerPady,
-              }}
-            >
-
-              <ConnectedAlpha />
-
-            </View>
-          </ImageBackground>
-        </View>
+        </ImageBackground>
+      </View>
     )
   }
 }
