@@ -1,13 +1,12 @@
 import { Platform, StyleSheet } from 'react-native'
 
-const PLAT = Platform.OS
-
 const getFontRef = (tag) => {
   fontKeys = {
     patrick: ['Patrick Hand SC','patrickhandsc'],
     luckiest: ['Luckiest Guy','luckiestguy'],
+    springfield: ['Springfield Demo','springfield'],
   }
-  switch (PLAT) {
+  switch (Platform.OS) {
     case 'web':
       return fontKeys[tag][0]
     case 'ios':
@@ -37,6 +36,7 @@ export const Fonts = StyleSheet.create({
   },
   players: {
     fontFamily: `${getFontRef('patrick')}`,
+    //fontFamily: `${getFontRef('springfield')}`,
     color:'#ddeedd',
     fontSize: 30,
     //marginTop: 6,
