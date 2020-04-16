@@ -18,7 +18,7 @@ const parentViewStyle = () => {
   })
 }
 
-export class S10Mockup extends Component {
+export class SamsungS10 extends Component {
   constructor(props) {
     super(props)
 
@@ -31,7 +31,7 @@ export class S10Mockup extends Component {
   }
 }
 
-export class OnePlus5TMockup extends Component {
+export class OnePlus5T extends Component {
   constructor(props) {
     super(props)
 
@@ -44,7 +44,7 @@ export class OnePlus5TMockup extends Component {
   }
 }
 
-export class Pixel3Mockup extends Component {
+export class Pixel3 extends Component {
   constructor(props) {
     super(props)
 

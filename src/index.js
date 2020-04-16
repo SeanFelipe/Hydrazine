@@ -7,10 +7,10 @@ import { hot } from 'react-hot-loader';
 import { store } from './store';
 import { ConnectedAlpha } from './components/Alpha.js';
 import {
-  S10Mockup,
-  Pixel3Mockup,
-  OnePlus5TMockup,
-  iPhone6Mockup
+  SamsungS10,
+  Pixel3,
+  OnePlus5T,
+  iPhone6
 } from './PhoneMockups.js'
 
 
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <View style={ topContainerStyle }>
         { Platform.OS === 'web'
-          ? <Pixel3Mockup />
+          ? <Pixel3 />
           : <ConnectedAlpha />
         }
       </View>
