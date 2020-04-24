@@ -5,13 +5,9 @@ import { connect, Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import { store } from './store';
-import { ConnectedAlpha } from './components/Alpha.js';
-import {
-  SamsungS10,
-  Pixel3,
-  OnePlus5T,
-  iPhone6
-} from './PhoneMockups.js'
+import { ConnectedAlpha } from './components/Alpha';
+import { PhoneWrapper } from './PhoneWrapper.js'
+
 
 
 class App extends Component {
@@ -28,7 +24,7 @@ class App extends Component {
     return (
       <View style={ topContainerStyle }>
         { Platform.OS === 'web'
-          ? <Pixel3 />
+          ? <PhoneWrapper />
           : <ConnectedAlpha />
         }
       </View>

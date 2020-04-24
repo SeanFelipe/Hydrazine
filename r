@@ -1,2 +1,2 @@
-title ruui-dev
+title 'run ruui-dev'
 ruui dev
