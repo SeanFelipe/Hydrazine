@@ -19,11 +19,6 @@ export class Pixel3 extends Component {
     this.displayInnerResolutionWidth = this.phoneResolutionWidth / 3
     this.innerPadx = ( this.displayWidth - this.displayInnerResolutionWidth ) / 2
     this.innerPady = ( this.displayHeight - this.displayInnerResolutionHeight ) / 2
-
-    this.phonePngStyle = {
-      width: this.displayWidth,
-      height: this.displayHeight,
-    }
   }
 
   render() {

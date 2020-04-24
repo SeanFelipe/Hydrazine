@@ -9,10 +9,22 @@ export class SamsungS10 extends Component {
     super(props)
 
     this.phonePng = S10
-    this.physicalPhoneHeight = 1604
-    this.physicalPhoneWidth = 720
-    this.displayHeight = this.physicalPhoneHeight / 2
-    this.displayWidth = this.physicalPhoneWidth / 2 + 20
+    // WQHD max resolutions
+    this.physicalPhoneHeight = 3040
+    this.physicalPhoneWidth = 1440
+    // FHD+ resolutions (1080p)
+    //this.physicalPhoneHeight = 2280
+    //this.physicalPhoneHeight = 1080
+    // HD+ resolutions (720p)
+    //this.physicalPhoneHeight = 1520
+    //this.physicalPhoneHeight = 720
+
+    this.browserDisplayHeight = this.physicalPhoneHeight / 4 + 50
+    this.browserDisplayWidth = this.physicalPhoneWidth / 4 + 20
+    this.displayInnerResolutionHeight = this.browserDisplayHeight
+    this.displayInnerResolutionWidth = this.browserDisplayWidth
+    this.innerPadx = ( this.displayWidth - this.displayInnerResolutionWidth ) / 2
+    this.innerPady = ( this.displayHeight - this.displayInnerResolutionHeight ) / 2
   }
 
   render() {
@@ -27,7 +39,7 @@ export class SamsungS10 extends Component {
     return (
       <View>
         <ImageBackground
-          style={{ width: this.displayWidth, height: this.displayHeight }}
+          style={{ width: this.browserDisplayWidth, height: this.browserDisplayHeight }}
           source={this.phonePng}
         >
 
