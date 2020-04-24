@@ -12,8 +12,8 @@ export class PhoneWrapper extends Component {
     super(props)
 
     //this.PHONE_WRAPPER = 'Pixel3'
-    //this.PHONE_WRAPPER = 'SamsungS10'
-    this.PHONE_WRAPPER = 'OnePlus5T'
+    this.PHONE_WRAPPER = 'SamsungS10'
+    //this.PHONE_WRAPPER = 'OnePlus5T'
     //this.PHONE_WRAPPER = 'iPhone6'
 
     this.wrapper = this.wrapper.bind(this)

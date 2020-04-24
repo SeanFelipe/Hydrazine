@@ -171,23 +171,23 @@ class SplashScreen extends React.Component {
             </Animated.View>
           </View>
           <View id="spec-id">
-            <Text>Spec ID View</Text>
+            <Text></Text>
           </View>
           <Animated.View style={introFontContainer}>
             <Animated.View style={{opacity: this.state.opacityFutbol}}>
-              <Text style={Fonts.introText}>Futbol</Text>
+              <Text style={Fonts.introText}>React</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityData}}>
-              <Text style={Fonts.introText}>Data</Text>
+              <Text style={Fonts.introText}></Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityCl}}>
-              <Text style={Fonts.cl}>Cl</Text>
+              <Text style={Fonts.cl}>Hy</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityIe}}>
-              <Text style={Fonts.ient}>ie</Text>
+              <Text style={Fonts.ient}>dra</Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityNt}}>
-              <Text style={Fonts.ient}>nt</Text>
+              <Text style={Fonts.ient}>zine</Text>
             </Animated.View>
           </Animated.View>
           <View style={Expr.splashMenu}>
@@ -196,7 +196,7 @@ class SplashScreen extends React.Component {
                 style={Fonts.menuText}
                 onPress={this.triggerDisplayScreen}
               >
-                Top Scorers
+                An extention
               </Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacitySearch}}>
@@ -204,7 +204,7 @@ class SplashScreen extends React.Component {
                 style={Fonts.menuText}
                 onPress={this.triggerSearchScreen}
               >
-                Search Names
+                To React Native for Web
               </Text>
             </Animated.View>
             <Animated.View style={{opacity: this.state.opacityAbout}}>
@@ -212,7 +212,7 @@ class SplashScreen extends React.Component {
                 style={Fonts.menuText}
                 onPress={this.triggerAboutScreen}
               >
-                About
+                And React Universal
               </Text>
             </Animated.View>
           </View>
