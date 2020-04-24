@@ -9,10 +9,14 @@ export class OnePlus5T extends Component {
     super(props)
 
     this.phonePng = onePlus
-    this.physicalPhoneHeight = 1356
-    this.physicalPhoneWidth = 664
-    this.displayHeight = this.physicalPhoneHeight / 2 + 60
-    this.displayWidth = this.physicalPhoneWidth / 2 + 30
+    this.physicalPhoneHeight = 2160
+    this.physicalPhoneWidth = 1080
+    this.browserDisplayHeight = this.physicalPhoneHeight / 3 + 80
+    this.browserDisplayWidth = this.physicalPhoneWidth / 3 + 30
+    this.displayInnerResolutionHeight = this.browserDisplayHeight
+    this.displayInnerResolutionWidth = this.browserDisplayWidth
+    this.innerPadx = 0
+    this.innerPady = 0
   }
 
   render() {
@@ -27,7 +31,7 @@ export class OnePlus5T extends Component {
     return (
       <View>
         <ImageBackground
-          style={{ width: this.displayWidth, height: this.displayHeight }}
+          style={{ width: this.browserDisplayWidth, height: this.browserDisplayHeight }}
           source={this.phonePng}
         >
 

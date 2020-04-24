@@ -11,10 +11,10 @@ export class PhoneWrapper extends Component {
   constructor(props) {
     super(props)
 
-    //this.PHONE_WRAPPER = 'pixel3'
-    this.PHONE_WRAPPER = 'samsungs10'
-    //this.PHONE_WRAPPER = 'oneplus5t'
-    //this.PHONE_WRAPPER = 'iphone6'
+    //this.PHONE_WRAPPER = 'Pixel3'
+    //this.PHONE_WRAPPER = 'SamsungS10'
+    this.PHONE_WRAPPER = 'OnePlus5T'
+    //this.PHONE_WRAPPER = 'iPhone6'
 
     this.wrapper = this.wrapper.bind(this)
   }
