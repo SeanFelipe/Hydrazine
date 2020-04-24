@@ -1,6 +1,6 @@
 # React Hydrazine
 
-A UI layer over [React Universal](https://github.com/cloudle/ruui) and [React Native for Web](https://github.com/necolas/react-native-web), which scales a phone PNG to fix your UI so the webpage looks (mostly) like how your native UI *will* look when you decide to take the time to compile (hopefully).
+A UI layer over [React Universal](https://github.com/cloudle/ruui) and [React Native for Web](https://github.com/necolas/react-native-web), which scales a phone PNG to fix your UI so the webpage looks like how your native UI *will* look (mostly) when you decide to take the time to compile (hopefully).
 
 The high-level architecture looks like this:
 
